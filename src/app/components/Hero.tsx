@@ -1,0 +1,248 @@
+import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
+import tractorImage from "../../imports/pauny-540C-Bravo.png";
+
+export function Hero() {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      window.scrollTo({
+        top: el.offsetTop - 90,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return (
+    <section
+      id="inicio"
+      className="relative min-h-screen flex items-center overflow-hidden bg-zinc-950"
+    >
+      {/* Campo Background Image with Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop')`,
+        }}
+      />
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-zinc-950/90 to-black/95" />
+
+      {/* Additional vignette effect */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at center, transparent 0%, transparent 40%, rgba(0,0,0,0.6) 100%)",
+        }}
+      />
+
+      {/* Subtle Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(250, 204, 21, 0.5) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(250, 204, 21, 0.5) 1px, transparent 1px)`,
+          backgroundSize: "100px 100px",
+        }}
+      />
+
+      {/* Container with max-width 1800px */}
+      <div className="w-full max-w-[1800px] mx-auto px-6 relative z-10">
+        <div className="relative min-h-[calc(100vh-180px)] flex items-center">
+          {/* Content - Left Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative z-20 max-w-2xl pr-8 lg:max-w-3xl"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-0.5 w-12 bg-yellow-400" />
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-yellow-400">
+                Coronel Pringles · Buenos Aires
+              </span>
+            </div>
+
+            <h1 className="text-7xl lg:text-8xl xl:text-[8.5rem] tracking-tighter leading-[0.95] mb-8 ">
+              <span className="text-white font-[Anton]">
+                La potencia
+              </span>
+              <br />
+              <span className="text-white font-[Anton]">
+                que necesita
+              </span>
+              <br />
+              <span className="text-yellow-400 mt-3 inline-block font-[Anton]">
+                tu campo
+              </span>
+            </h1>
+
+            <p className="text-xl text-white/70 leading-relaxed mb-10 max-w-xl">
+              Tractores Pauny y Gravo, sembradoras, acoplados e
+              implementos.
+              <span className="block mt-2 text-yellow-400 font-semibold">
+                35 años de trayectoria en el agro argentino.
+              </span>
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <button
+                onClick={() => scrollToSection("catalogo")}
+                className="group bg-yellow-400 cursor-pointer text-zinc-950 px-8 py-4 font-black text-sm tracking-wider uppercase transition-all hover:bg-yellow-300 flex items-center gap-2"
+              >
+                Ver catálogo
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+              <button
+                onClick={() => scrollToSection("contacto")}
+                className="px-8 py-4 font-black cursor-pointer text-sm tracking-wider uppercase border-2 border-white text-white transition-all hover:bg-white hover:text-zinc-950"
+              >
+                Pedir presupuesto
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Tractor Image - Right Side - MASSIVE with Floating Animation */}
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              y: [0, -20, 0],
+            }}
+            transition={{
+              opacity: { duration: 1, delay: 0.2 },
+              x: { duration: 1, delay: 0.2 },
+              y: {
+                duration: 5,
+                delay: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            className="absolute -right-70 lg:-right-80 top-[45%] -translate-y-1/2 w-full h-full lg:w-[1400px] lg:h-[1050px] xl:w-[1600px] xl:h-[1200px] hidden md:block pointer-events-none z-10"
+            style={{
+              filter:
+                "drop-shadow(0 40px 120px rgba(250, 204, 21, 0.3)) drop-shadow(0 0 60px rgba(250, 204, 21, 0.2))",
+            }}
+          >
+            <img
+              src={tractorImage}
+              alt="Pauny 540 C Bravo"
+              className="w-10/12 lg:w-full h-full object-contain"
+            />
+          </motion.div>
+
+          {/* Floating Technical Panel - Overlaying the tractor */}
+          <motion.aside
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.8,
+              ease: "easeOut",
+            }}
+            className="absolute bottom-4 right-16 w-96 bg-zinc-950/70 backdrop-blur-md border border-white/10 p-7 shadow-[0_25px_70px_rgba(0,0,0,0.7)] hidden lg:block z-40"
+          >
+            <div className="flex items-center justify-between mb-5">
+              <span className="text-xs font-bold tracking-[0.28em] text-yellow-400">
+                FICHA TÉCNICA
+              </span>
+              <span className="text-xs font-mono text-white/50">
+                REF. 540C
+              </span>
+            </div>
+
+            <div className="h-px bg-yellow-400/50 mb-5" />
+
+            <div className="grid grid-cols-4 gap-4 mb-5">
+              <div>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="font-black text-3xl text-white">
+                    220
+                  </span>
+                  <span className="text-xs text-yellow-400 tracking-wider font-bold">
+                    HP
+                  </span>
+                </div>
+                <div className="text-[10px] text-white/50 tracking-wide uppercase">
+                  Potencia
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="font-black text-3xl text-white">
+                    9.8
+                  </span>
+                  <span className="text-xs text-yellow-400 tracking-wider font-bold">
+                    T
+                  </span>
+                </div>
+                <div className="text-[10px] text-white/50 tracking-wide uppercase">
+                  Peso
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="font-black text-3xl text-white">
+                    450
+                  </span>
+                  <span className="text-xs text-yellow-400 tracking-wider font-bold">
+                    L
+                  </span>
+                </div>
+                <div className="text-[10px] text-white/50 tracking-wide uppercase">
+                  Tanque
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="font-black text-2xl text-white">
+                    4×4
+                  </span>
+                </div>
+                <div className="text-[10px] text-white/50 tracking-wide uppercase">
+                  Articulado
+                </div>
+              </div>
+            </div>
+
+            <div className="h-px bg-yellow-400/50 mb-5" />
+
+            <button
+              onClick={() => scrollToSection("contacto")}
+              className="w-full bg-yellow-400 text-zinc-950 py-4 text-xs font-bold cursor-pointer uppercase transition-all hover:bg-yellow-300 flex items-center justify-center gap-2 group"
+            >
+              SOLICITAR COTIZACIÓN
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </motion.aside>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-zinc-950/60 backdrop-blur-md z-20"
+      >
+        <div className="max-w-[1800px] mx-auto px-6 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono tracking-wider">
+            <div className="text-yellow-400 font-bold">
+              EST. 1990 · 35 AÑOS DE TRAYECTORIA
+            </div>
+            <div className="text-white/50">
+              Concesionario oficial Pauny · Distribuidor Gravo
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}

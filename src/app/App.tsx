@@ -1,0 +1,40 @@
+import { useState } from 'react';
+import { Toaster } from 'sonner';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { Brands } from './components/Brands';
+import { Catalog } from './components/Catalog';
+import { Financing } from './components/Financing';
+import { About } from './components/About';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { Product } from './data/catalog';
+
+export default function App() {
+  const [compareProducts, setCompareProducts] = useState<Product[]>([]);
+
+  return (
+    <div className="min-h-screen bg-zinc-950 text-white">
+      <Header />
+      <main>
+        <Hero />
+        <Brands />
+        <Catalog
+          compareProducts={compareProducts}
+          setCompareProducts={setCompareProducts}
+        />
+        <Financing />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
+      <Toaster
+        position="top-right"
+        theme="dark"
+        richColors
+      />
+    </div>
+  );
+}

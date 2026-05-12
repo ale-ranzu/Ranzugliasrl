@@ -1,0 +1,163 @@
+import { Instagram, Phone, Mail, MapPin } from "lucide-react";
+import logoHR from "../../imports/logo-HR.png";
+
+export function Footer() {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      window.scrollTo({
+        top: el.offsetTop - 90,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="bg-zinc-950 text-white">
+      <div className="container mx-auto px-6 py-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={logoHR}
+                alt="Humberto Ranzuglia"
+                className="h-12 w-auto"
+              />
+              <div>
+                <div className="font-black text-base tracking-wide uppercase font-[Anton]">
+                  Humberto Ranzuglia S.R.L
+                </div>
+              </div>
+            </div>
+            <p className="text-sm text-white/50 leading-relaxed mb-4">
+              Concesionario oficial Pauny y distribuidor Gravo.
+              Sembradoras, acoplados e implementos.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="https://www.instagram.com/humbertoranzugliasrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 border-2 border-white/20 rounded flex items-center justify-center hover:bg-yellow-400 hover:border-yellow-400 hover:text-zinc-950 transition-all"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://wa.me/5492923431570"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 border-2 border-white/20 rounded flex items-center justify-center hover:bg-yellow-400 hover:border-yellow-400 hover:text-zinc-950 transition-all"
+                aria-label="WhatsApp"
+              >
+                <Phone className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Catálogo */}
+          <div>
+            <div className="text-xs font-black tracking-wider uppercase text-yellow-400 mb-4">
+              Catálogo
+            </div>
+            <div className="space-y-2">
+              {[
+                "Tractores Pauny",
+                "Tractores Gravo",
+                "Sembradoras",
+                "Acoplados",
+                "Implementos",
+              ].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection("catalogo")}
+                  className="block text-sm text-white/60 hover:text-yellow-400 transition-colors text-left"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Empresa */}
+          <div>
+            <div className="text-xs font-black tracking-wider uppercase text-yellow-400 mb-4">
+              Empresa
+            </div>
+            <div className="space-y-2">
+              {[
+                { label: "Sobre nosotros", id: "nosotros" },
+                {
+                  label: "Financiamiento",
+                  id: "financiamiento",
+                },
+                { label: "Contacto", id: "contacto" },
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block text-sm text-white/60 hover:text-yellow-400 transition-colors text-left"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <a
+                href="https://www.instagram.com/humbertoranzugliasrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-white/60 hover:text-yellow-400 transition-colors"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          {/* Contacto */}
+          <div>
+            <div className="text-xs font-black tracking-wider uppercase text-yellow-400 mb-4">
+              Contacto
+            </div>
+            <div className="space-y-3">
+              <a
+                href="https://wa.me/5492923431570"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-white/60 hover:text-yellow-400 transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                2923 43 1570
+              </a>
+              <a
+                href="mailto:info@humbertoranzuglia.com.ar"
+                className="flex items-center gap-2 text-sm text-white/60 hover:text-yellow-400 transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                info@humbertoranzuglia.com.ar
+              </a>
+              <div className="flex items-center gap-2 text-sm text-white/60">
+                <MapPin className="w-4 h-4" />
+                Coronel Pringles, Bs. As.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10">
+        <div className="container mx-auto px-6 py-5">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
+            <div>© {year} Humberto Ranzuglia S.R.L.</div>
+            <div>
+              Concesionario Pauny · Distribuidor Gravo · Coronel
+              Pringles
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

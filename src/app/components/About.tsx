@@ -1,0 +1,86 @@
+import { motion } from 'motion/react';
+import paunyLogo from '../../imports/pauny.png';
+
+const stats = [
+  { number: '35+', label: 'Años en el mercado' },
+  { number: '10+', label: 'Marcas distribuidas' },
+  { number: 'Pauny', label: 'Concesionario oficial' },
+  { number: 'Gravo', label: 'Distribuidor autorizado' },
+];
+
+export function About() {
+  return (
+    <section id="nosotros" className="bg-zinc-50 py-20">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="h-0.5 w-8 bg-zinc-500" />
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">
+            Quiénes somos
+          </span>
+        </div>
+
+        <div className="grid lg:grid-cols-[1.4fr,1fr] gap-16 items-start">
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+          >
+            <h2 className="font-black text-4xl md:text-5xl lg:text-6xl tracking-tighter text-zinc-950 mb-6 leading-none">
+              Potencia y solidez<br />en el campo
+            </h2>
+            <p className="text-lg text-zinc-700 leading-relaxed mb-4">
+              Desde 1990, Humberto Ranzuglia S.R.L. es sinónimo de confianza en la región de Coronel Pringles.
+              Somos concesionarios oficiales de Pauny, distribuidores de Gravo y representantes de las marcas
+              líderes del agro argentino.
+            </p>
+            <p className="text-base text-zinc-600 leading-relaxed mb-8">
+              Nuestro equipo conoce el campo porque vive en él. Asesoramiento honesto, postventa comprometida
+              y repuestos siempre disponibles.
+            </p>
+
+            <div className="flex items-center gap-4 pt-6 border-t border-zinc-200">
+              <div className="h-10 flex items-center">
+                <img
+                  src={paunyLogo}
+                  alt="Pauny"
+                  className="h-8 object-contain"
+                />
+              </div>
+              <span className="text-xs font-bold tracking-wide uppercase text-zinc-500">
+                Concesionario Oficial · Distribuidor Gravo
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ delay: 0.2 }}
+            className="grid grid-cols-2 gap-4"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: 0.3 + index * 0.1 }}
+                className="bg-white border border-zinc-200 border-l-4 border-l-yellow-400 p-6 hover:-translate-y-1 transition-transform"
+              >
+                <div className="font-black text-4xl text-zinc-950 mb-2 leading-none">
+                  {stat.number}
+                </div>
+                <div className="text-xs font-bold tracking-wider uppercase text-zinc-400">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
