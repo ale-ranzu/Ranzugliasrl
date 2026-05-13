@@ -65,7 +65,7 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="text-7xl lg:text-8xl xl:text-[8.5rem] tracking-tighter leading-[0.95] mb-8 ">
+            <h1 className="text-7xl lg:text-8xl xl:text-[8.5rem]  leading-[0.95] mb-8 ">
               <span className="text-white font-[Anton]">
                 La potencia
               </span>
@@ -79,25 +79,24 @@ export function Hero() {
               </span>
             </h1>
 
-            <p className="text-xl text-white/70 leading-relaxed mb-10 max-w-xl">
-              Tractores Pauny y Gravo, sembradoras, acoplados e
-              implementos.
+            <p className="text-xl text-white/70 leading-relaxed mb-10 max-w-2xl">
+              Tractores Pauny y Gravo, sembradoras, acoplados e implementos.
               <span className="block mt-2 text-yellow-400 font-semibold">
-                35 años de trayectoria en el agro argentino.
+                + de 50 años de trayectoria en el agro argentino.
               </span>
             </p>
 
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => scrollToSection("catalogo")}
-                className="group bg-yellow-400 cursor-pointer text-zinc-950 px-8 py-4 font-black text-sm tracking-wider uppercase transition-all hover:bg-yellow-300 flex items-center gap-2"
+                className="group bg-yellow-400 cursor-pointer text-zinc-950 px-8 py-4 font-semibold text-sm tracking-wider uppercase transition-all hover:bg-yellow-300 flex items-center gap-2"
               >
                 Ver catálogo
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
               <button
                 onClick={() => scrollToSection("contacto")}
-                className="px-8 py-4 font-black cursor-pointer text-sm tracking-wider uppercase border-2 border-white text-white transition-all hover:bg-white hover:text-zinc-950"
+                className="px-8 py-4 font-semibold cursor-pointer text-sm tracking-wider uppercase border-2 border-white text-white transition-all hover:bg-white hover:text-zinc-950"
               >
                 Pedir presupuesto
               </button>
@@ -144,7 +143,7 @@ export function Hero() {
               delay: 0.8,
               ease: "easeOut",
             }}
-            className="absolute bottom-4 right-16 w-96 bg-zinc-950/70 backdrop-blur-md border border-white/10 p-7 shadow-[0_25px_70px_rgba(0,0,0,0.7)] hidden lg:block z-40"
+            className="absolute bottom-8 right-8 w-120 bg-zinc-950/70 backdrop-blur-md border border-white/10 p-7 shadow-[0_25px_70px_rgba(0,0,0,0.7)] hidden lg:block z-40"
           >
             <div className="flex items-center justify-between mb-5">
               <span className="text-xs font-bold tracking-[0.28em] text-yellow-400">
@@ -202,7 +201,7 @@ export function Hero() {
 
               <div>
                 <div className="flex items-baseline gap-1 mb-1">
-                  <span className="font-black text-2xl text-white">
+                  <span className="font-black text-3xl text-white">
                     4×4
                   </span>
                 </div>
@@ -216,7 +215,7 @@ export function Hero() {
 
             <button
               onClick={() => scrollToSection("contacto")}
-              className="w-full bg-yellow-400 text-zinc-950 py-4 text-xs font-bold cursor-pointer uppercase transition-all hover:bg-yellow-300 flex items-center justify-center gap-2 group"
+              className="w-full bg-yellow-400 text-zinc-950 py-4 text-xs font-semibold cursor-pointer uppercase transition-all hover:bg-yellow-300 flex items-center justify-center gap-2 group"
             >
               SOLICITAR COTIZACIÓN
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -235,7 +234,7 @@ export function Hero() {
         <div className="max-w-[1800px] mx-auto px-6 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono tracking-wider">
             <div className="text-yellow-400 font-bold">
-              EST. 1990 · 35 AÑOS DE TRAYECTORIA
+              EST. 1973 · + DE 50 AÑOS DE TRAYECTORIA
             </div>
             <div className="text-white/50">
               Concesionario oficial Pauny · Distribuidor Gravo

@@ -83,7 +83,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
                 Catálogo completo
               </span>
             </div>
-            <h2 className="font-black text-4xl md:text-5xl lg:text-6xl tracking-tighter text-zinc-950">
+            <h2 className="font-normal text-4xl md:text-5xl lg:text-6xl text-zinc-950">
               MAQUINARIA AGRÍCOLA
             </h2>
           </div>
@@ -96,7 +96,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
                 setActiveCategory('todos');
                 setSearchQuery('');
               }}
-              className={`px-8 py-3 text-sm font-black tracking-wider uppercase transition-colors cursor-pointer ${
+              className={`px-8 py-3 text-sm font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeTab === 'nuevo'
                   ? 'bg-zinc-950 text-white'
                   : 'bg-transparent text-zinc-950 hover:bg-zinc-100'
@@ -110,7 +110,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
                 setActiveCategory('todos');
                 setSearchQuery('');
               }}
-              className={`px-8 py-3 text-sm font-black tracking-wider uppercase transition-colors cursor-pointer ${
+              className={`px-8 py-3 text-sm font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
                 activeTab === 'usado'
                   ? 'bg-zinc-950 text-white'
                   : 'bg-transparent text-zinc-950 hover:bg-zinc-100'
@@ -148,7 +148,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveCategory('todos')}
-                className={`px-4 py-2 text-xs font-bold tracking-wider uppercase rounded-full border-2 transition-all cursor-pointer ${
+                className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full border-2 transition-all cursor-pointer ${
                   activeCategory === 'todos'
                     ? 'bg-zinc-950 text-white border-zinc-950'
                     : 'bg-white text-zinc-950 border-zinc-950 hover:bg-zinc-100'
@@ -160,7 +160,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 text-xs font-bold tracking-wider uppercase rounded-full border-2 transition-all cursor-pointer ${
+                  className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full border-2 transition-all cursor-pointer ${
                     activeCategory === cat
                       ? 'bg-zinc-950 text-white border-zinc-950'
                       : 'bg-white text-zinc-950 border-zinc-950 hover:bg-zinc-100'
@@ -206,7 +206,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
         {filteredProducts.length === 0 ? (
           <div className="text-center py-20">
             <div className="text-6xl mb-4">🚜</div>
-            <h3 className="font-black text-2xl text-zinc-950 mb-2">
+            <h3 className="font-normal text-2xl text-zinc-950 mb-2">
               No se encontraron productos
             </h3>
             <p className="text-zinc-500 mb-6">
@@ -217,7 +217,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
                 setSearchQuery('');
                 setActiveCategory('todos');
               }}
-              className="bg-zinc-950 text-white px-6 py-3 font-bold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
+              className="bg-zinc-950 text-white px-6 py-3 font-semibold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
             >
               Limpiar filtros
             </button>
@@ -264,7 +264,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
             <div className="flex justify-center">
               <button
                 onClick={() => setItemsToShow(prev => prev + 12)}
-                className="bg-transparent text-zinc-950 px-8 py-3 font-bold text-sm tracking-wide border-2 border-zinc-950 transition-all hover:bg-zinc-950 hover:text-white cursor-pointer"
+                className="bg-transparent text-zinc-950 px-8 py-3 font-semibold text-sm tracking-wide border-2 border-zinc-950 transition-all hover:bg-zinc-950 hover:text-white cursor-pointer"
               >
                 Ver los siguientes productos
               </button>
@@ -284,7 +284,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
         <div className="fixed bottom-8 right-8 z-50">
           <button
             onClick={() => setCompareDrawerOpen(true)}
-            className="flex items-center gap-3 bg-zinc-950 text-white px-6 py-4 font-bold text-base shadow-2xl transition-all hover:bg-zinc-800 hover:scale-105 cursor-pointer border-2 border-yellow-400"
+            className="flex items-center gap-3 bg-zinc-950 text-white px-6 py-4 font-semibold text-base shadow-2xl transition-all hover:bg-zinc-800 hover:scale-105 cursor-pointer border-2 border-yellow-400"
           >
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-yellow-400 text-zinc-950 flex items-center justify-center font-black text-sm">

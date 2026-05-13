@@ -96,7 +96,7 @@ export function Contact() {
               </span>
             </div>
 
-            <h2 className="font-black text-5xl md:text-6xl lg:text-7xl tracking-tighter text-zinc-950 mb-6 leading-none">
+            <h2 className="font-normal text-5xl md:text-6xl lg:text-7xl  text-zinc-950 mb-6 leading-none">
               Pedí tu
               <br />
               presupuesto
@@ -167,7 +167,7 @@ export function Contact() {
                   onSubmit={handleSubmit}
                   className="bg-white rounded-xl p-8 shadow-[8px_8px_0_0_rgba(10,10,10,0.5)] border-2 border-zinc-950"
                 >
-                  <h3 className="font-black text-2xl text-zinc-950 mb-6 tracking-tight">
+                  <h3 className="font-normal text-2xl text-zinc-950 mb-6">
                     Cotizá tu maquinaria
                   </h3>
 
@@ -393,7 +393,7 @@ export function Contact() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-yellow-400 cursor-pointer text-zinc-950 py-4 font-black text-sm tracking-wider uppercase transition-all hover:bg-yellow-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-yellow-400 cursor-pointer text-zinc-950 py-4 font-semibold text-sm tracking-wider uppercase transition-all hover:bg-yellow-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting
                         ? "Enviando..."
@@ -421,7 +421,7 @@ export function Contact() {
                   >
                     <Check className="w-8 h-8 text-zinc-950" />
                   </motion.div>
-                  <h3 className="font-black text-3xl text-zinc-950 mb-3">
+                  <h3 className="font-normal text-3xl text-zinc-950 mb-3">
                     ¡Consulta enviada!
                   </h3>
                   <p className="text-zinc-600 mb-6">
@@ -429,7 +429,7 @@ export function Contact() {
                   </p>
                   <button
                     onClick={() => setIsSuccess(false)}
-                    className="bg-transparent border-2 border-zinc-950 text-zinc-950 px-6 py-3 font-bold text-sm hover:bg-zinc-950 hover:text-white transition-colors"
+                    className="bg-transparent border-2 border-zinc-950 text-zinc-950 px-6 py-3 font-semibold text-sm hover:bg-zinc-950 hover:text-white transition-colors"
                   >
                     Enviar otra consulta
                   </button>

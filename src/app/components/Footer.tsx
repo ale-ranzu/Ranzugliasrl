@@ -27,7 +27,7 @@ export function Footer() {
                 className="h-12 w-auto"
               />
               <div>
-                <div className="font-black text-base tracking-wide uppercase font-[Anton]">
+                <div className="text-base tracking-wide uppercase font-[Anton]">
                   Humberto Ranzuglia S.R.L
                 </div>
               </div>
@@ -60,7 +60,7 @@ export function Footer() {
 
           {/* Catálogo */}
           <div>
-            <div className="text-xs font-black tracking-wider uppercase text-yellow-400 mb-4">
+            <div className="text-xs font-semibold tracking-wider uppercase text-yellow-400 mb-4">
               Catálogo
             </div>
             <div className="space-y-2">
@@ -84,7 +84,7 @@ export function Footer() {
 
           {/* Empresa */}
           <div>
-            <div className="text-xs font-black tracking-wider uppercase text-yellow-400 mb-4">
+            <div className="text-xs font-semibold tracking-wider uppercase text-yellow-400 mb-4">
               Empresa
             </div>
             <div className="space-y-2">
@@ -117,7 +117,7 @@ export function Footer() {
 
           {/* Contacto */}
           <div>
-            <div className="text-xs font-black tracking-wider uppercase text-yellow-400 mb-4">
+            <div className="text-xs font-semibold tracking-wider uppercase text-yellow-400 mb-4">
               Contacto
             </div>
             <div className="space-y-3">

@@ -78,7 +78,7 @@ export function Header() {
               className="h-16 w-auto"
             />
             <div className="text-left">
-              <div className="font-bold text-md tracking-wider text-white text-[20px] font-[Anton]">
+              <div className="tracking-wider text-white text-[20px] font-[Anton]">
                 HUMBERTO RANZUGLIA S.R.L.
               </div>
             </div>
@@ -90,7 +90,7 @@ export function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-bold tracking-wider uppercase transition-colors relative cursor-pointer ${
+                className={`text-sm font-semibold tracking-wider uppercase transition-colors relative cursor-pointer ${
                   activeSection === item.id
                     ? "text-yellow-400"
                     : "text-white/70 hover:text-yellow-400"
@@ -144,7 +144,7 @@ export function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left py-3 px-4 text-sm font-bold tracking-wider uppercase transition-colors border-b border-white/5 cursor-pointer ${
+                  className={`block w-full text-left py-3 px-4 text-sm font-semibold tracking-wider uppercase transition-colors border-b border-white/5 cursor-pointer ${
                     activeSection === item.id
                       ? "text-yellow-400 bg-yellow-400/10"
                       : "text-white/70 hover:text-yellow-400 hover:bg-white/5"

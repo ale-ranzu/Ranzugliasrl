@@ -84,7 +84,7 @@ export function Financing() {
             </span>
             <div className="h-0.5 w-8 bg-yellow-400" />
           </div>
-          <h2 className="font-black text-4xl md:text-5xl tracking-tighter text-white mb-4">
+          <h2 className="font-normal text-4xl md:text-5xl text-white mb-4">
             OPCIONES DE PAGO Y CRÉDITO
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
@@ -118,15 +118,15 @@ export function Financing() {
                   <div className="text-yellow-400">{option.icon}</div>
                 )}
               </div>
-              <h3 className="text-white mb-3 tracking-tight text-[28px]">
+              <h3 className="text-white mb-3 text-[28px]">
                 {option.title}
               </h3>
-              <p className="text-white/60 leading-relaxed mb-4 text-[#ffffffd6] text-[16px]">
+              <p className="text-white/60 leading-relaxed mb-4 text-[16px]">
                 {option.desc}
               </p>
               <button
                 onClick={scrollToCalculator}
-                className="text-sm font-bold text-yellow-400 hover:text-yellow-300 transition-colors cursor-pointer"
+                className="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition-colors cursor-pointer"
               >
                 Más información →
               </button>
@@ -141,7 +141,7 @@ export function Financing() {
             transition={{ delay: 0.5 }}
             className="bg-yellow-400 text-zinc-950 rounded-lg p-7 flex flex-col justify-center items-start"
           >
-            <h3 className="font-black text-2xl mb-3 tracking-tight">
+            <h3 className="font-normal text-2xl mb-3">
               ¿No sabés cuál te conviene?
             </h3>
             <p className="mb-6 leading-relaxed opacity-80 text-[16px]">
@@ -152,7 +152,7 @@ export function Financing() {
               href="https://wa.me/5492923431570?text=Hola%2C%20quiero%20consultar%20opciones%20de%20financiamiento"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-zinc-950 text-white px-6 py-3 font-bold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
+              className="bg-zinc-950 text-white px-6 py-3 font-semibold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
             >
               Hablar con un asesor
             </a>
@@ -165,7 +165,7 @@ export function Financing() {
           className="bg-zinc-950 border border-yellow-400/30 rounded-xl p-8 max-w-4xl mx-auto scroll-mt-24"
         >
           <div className="flex items-center justify-between mb-6">
-            <h3 className="font-black text-2xl text-white">
+            <h3 className="font-normal text-2xl text-white">
               Calculadora de Cuotas
             </h3>
             <Calculator className="w-6 h-6 text-yellow-400" />

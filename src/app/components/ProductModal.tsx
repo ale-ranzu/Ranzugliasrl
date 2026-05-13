@@ -97,7 +97,7 @@ export function ProductModal({
                 <div className="text-sm font-bold tracking-[0.2em] uppercase text-black mb-2">
                   {product.marca}
                 </div>
-                <h2 className="text-5xl md:text-6xl tracking-tight text-zinc-950 leading-none font-[Anton] font-normal">
+                <h2 className="text-5xl md:text-6xl text-zinc-950 leading-none font-[Anton] font-normal">
                   {product.nombre}
                 </h2>
               </div>
@@ -177,13 +177,13 @@ export function ProductModal({
               <div className="mt-auto space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
                 <button
                   onClick={scrollToContact}
-                  className="w-full bg-yellow-400 text-zinc-950 py-4 font-black text-sm tracking-wider uppercase transition-all hover:bg-yellow-300 cursor-pointer"
+                  className="w-full bg-yellow-400 text-zinc-950 py-4 font-semibold text-sm tracking-wider uppercase transition-all hover:bg-yellow-300 cursor-pointer"
                 >
                   Pedir presupuesto
                 </button>
                 <button
                   onClick={handleWhatsApp}
-                  className="w-full bg-[#25D366] text-white py-4 font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-[#20ba57] transition-colors cursor-pointer"
+                  className="w-full bg-[#25D366] text-white py-4 font-semibold text-sm tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-[#20ba57] transition-colors cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Consultar por WhatsApp

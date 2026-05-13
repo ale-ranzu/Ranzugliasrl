@@ -26,7 +26,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
           >
-            <h2 className="font-black text-4xl md:text-5xl lg:text-6xl tracking-tighter text-zinc-950 mb-6 leading-none">
+            <h2 className="font-normal text-4xl md:text-5xl lg:text-6xl text-zinc-950 mb-6 leading-none">
               Potencia y solidez<br />en el campo
             </h2>
             <p className="text-lg text-zinc-700 leading-relaxed mb-4">

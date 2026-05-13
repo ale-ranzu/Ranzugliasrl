@@ -57,7 +57,7 @@ export function ProductCard({
                 className="w-full h-auto"
               />
             ) : (
-              <span className="font-black text-2xl text-white">
+              <span className="font-normal text-2xl text-white">
                 {product.marca}
               </span>
             )}
@@ -67,17 +67,17 @@ export function ProductCard({
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-4 mb-3">
               <div className="flex-1">
-                <div className="text-xs font-bold tracking-wider uppercase text-zinc-400 mb-1">
+                <div className="text-sm font-bold tracking-wider uppercase text-zinc-400 mb-1">
                   {product.marca}
                 </div>
-                <h3 className="font-black text-2xl tracking-tight text-zinc-950 mb-2">
+                <h3 className="font-normal text-3xl text-zinc-950 mb-2">
                   {product.nombre}
                 </h3>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {product.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs font-semibold rounded"
+                      className="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs font-normal rounded"
                     >
                       {tag}
                     </span>
@@ -90,7 +90,7 @@ export function ProductCard({
 
               {/* Badge */}
               <span
-                className={`px-3 py-1 text-xs font-black tracking-wider uppercase rounded ${
+                className={`px-3 py-1 text-xs font-normal tracking-wider uppercase rounded ${
                   product.estado === "nuevo"
                     ? "bg-zinc-950 text-yellow-400"
                     : "bg-zinc-500 text-white"
@@ -104,7 +104,7 @@ export function ProductCard({
             <div className="flex items-center gap-3">
               <button
                 onClick={handleWhatsApp}
-                className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 font-bold text-sm hover:bg-[#20ba57] transition-colors cursor-pointer"
+                className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 font-semibold text-sm hover:bg-[#20ba57] transition-colors cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp
@@ -114,7 +114,7 @@ export function ProductCard({
                   e.stopPropagation();
                   onToggleCompare();
                 }}
-                className={`flex items-center gap-2 px-4 py-2 font-bold text-sm border-2 transition-all cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2 font-semibold text-sm border-2 transition-all cursor-pointer ${
                   isInCompare
                     ? "bg-yellow-400 border-yellow-400 text-zinc-950"
                     : "bg-transparent border-zinc-950 text-zinc-950 hover:bg-zinc-950 hover:text-white"
@@ -127,7 +127,7 @@ export function ProductCard({
                 )}
                 {isInCompare ? "En comparación" : "Comparar"}
               </button>
-              <button className="text-xs font-bold tracking-wider uppercase text-zinc-950 hover:text-yellow-400 transition-colors flex items-center gap-1 cursor-pointer">
+              <button className="text-xs font-semibold tracking-wider uppercase text-zinc-950 hover:text-yellow-400 transition-colors flex items-center gap-1 cursor-pointer">
                 Ver ficha →
               </button>
             </div>
@@ -150,7 +150,7 @@ export function ProductCard({
       {/* Badge */}
       <div className="absolute top-3 left-3 z-10">
         <span
-          className={`px-3 py-1 text-xs font-black tracking-wider uppercase rounded ${
+          className={`px-3 py-1 text-xs font-normal tracking-wider uppercase rounded ${
             product.estado === "nuevo"
               ? "bg-zinc-950 text-yellow-400"
               : "bg-zinc-500 text-white"
@@ -171,7 +171,7 @@ export function ProductCard({
             className="w-full h-full object-contain"
           />
         ) : (
-          <span className="font-black text-3xl text-white">
+          <span className="font-normal text-3xl text-white">
             {product.marca}
           </span>
         )}
@@ -179,17 +179,17 @@ export function ProductCard({
 
       {/* Content */}
       <div className="p-5">
-        <div className="text-xs font-bold tracking-wider uppercase text-zinc-400 mb-1">
+        <div className="text-sm font-bold tracking-wider uppercase text-zinc-400 mb-1">
           {product.marca}
         </div>
-        <h3 className="font-black text-xl tracking-tight text-zinc-950 mb-2">
+        <h3 className="font-normal text-2xl text-zinc-950 mb-2">
           {product.nombre}
         </h3>
         <div className="flex flex-wrap gap-1.5 mb-3">
           {product.tags.slice(0, 3).map((tag, i) => (
             <span
               key={i}
-              className="px-2 py-0.5 bg-zinc-100 text-zinc-600 text-xs font-semibold rounded"
+              className="px-2 py-0.5 bg-zinc-100 text-zinc-600 text-xs font-normal rounded"
             >
               {tag}
             </span>
@@ -201,7 +201,7 @@ export function ProductCard({
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-3">
-          <button className="text-xs font-bold tracking-wider uppercase text-zinc-950 hover:text-yellow-400 transition-colors flex items-center gap-1 cursor-pointer">
+          <button className="text-xs font-semibold tracking-wider uppercase text-zinc-950 hover:text-yellow-400 transition-colors flex items-center gap-1 cursor-pointer">
             Ver ficha →
           </button>
           <div className="flex items-center gap-2">

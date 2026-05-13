@@ -31,7 +31,7 @@ export function Brands() {
                 Marcas que distribuimos
               </span>
             </div>
-            <h2 className="font-black text-4xl md:text-5xl tracking-tighter text-zinc-950">
+            <h2 className="font-normal text-4xl md:text-5xl text-zinc-950">
               RESPALDO DE LAS MEJORES MARCAS
             </h2>
           </div>
@@ -52,7 +52,7 @@ export function Brands() {
               `}
             >
               {brand.text ? (
-                <span className="font-black text-xl tracking-tighter text-zinc-950">
+                <span className="font-normal text-xl text-zinc-950">
                   {brand.name}
                 </span>
               ) : brand.image ? (

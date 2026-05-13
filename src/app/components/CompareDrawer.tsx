@@ -41,7 +41,7 @@ export function CompareDrawer({ products, isOpen, onClose, onRemove }: CompareDr
         >
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-zinc-200">
-            <h3 className="font-black text-2xl tracking-tight text-zinc-950">
+            <h3 className="font-normal text-2xl tracking-tight text-zinc-950">
               Comparar Productos
             </h3>
             <button
