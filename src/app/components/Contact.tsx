@@ -68,8 +68,8 @@ export function Contact() {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "info@humbertoranzuglia.com.ar",
-      link: "mailto:info@humbertoranzuglia.com.ar",
+      value: "info@ranzugliasrl.com.ar",
+      link: "mailto:info@ranzugliasrl.com.ar",
     },
     {
       icon: <Instagram className="w-5 h-5" />,
@@ -362,7 +362,7 @@ export function Contact() {
                         }
                         placeholder="Contanos el uso que le vas a dar, tamaño del campo, etc."
                         rows={3}
-                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm resize-vertical bg-transparent"
+                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm resize-vertical bg-transparent text-zinc-950"
                       />
                     </div>
 
