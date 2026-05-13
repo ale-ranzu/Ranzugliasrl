@@ -1,10 +1,19 @@
-import { useState, useMemo, useEffect } from 'react';
-import { Search, Grid3x3, List, X, Plus, Check, ArrowRight } from 'lucide-react';
-import { toast } from 'sonner';
-import { CATALOG, CATEGORY_LABELS, Product } from '../data/catalog';
-import { ProductCard } from './ProductCard';
-import { ProductModal } from './ProductModal';
-import { CompareDrawer } from './CompareDrawer';
+import { useState, useMemo, useEffect } from "react";
+import {
+  Search,
+  Grid3x3,
+  List,
+  X,
+  Plus,
+  Check,
+  ArrowRight,
+} from "lucide-react";
+import { toast } from "sonner";
+import { CATALOG, CATEGORY_LABELS, Product } from "../data/catalog";
+import { ProductCard } from "./ProductCard";
+import { ProductModal } from "./ProductModal";
+import { CompareDrawer } from "./CompareDrawer";
+import sinResultados from "../../imports/no-se-encuentra.svg?url";
 
 interface CatalogProps {
   compareProducts: Product[];
@@ -12,21 +21,22 @@ interface CatalogProps {
 }
 
 export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
-  const [activeTab, setActiveTab] = useState<'nuevo' | 'usado'>('nuevo');
-  const [activeCategory, setActiveCategory] = useState<string>('todos');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [activeTab, setActiveTab] = useState<"nuevo" | "usado">("nuevo");
+  const [activeCategory, setActiveCategory] = useState<string>("todos");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [compareDrawerOpen, setCompareDrawerOpen] = useState(false);
   const [itemsToShow, setItemsToShow] = useState(12);
 
   const filteredProducts = useMemo(() => {
-    return CATALOG.filter(product => {
+    return CATALOG.filter((product) => {
       // Filter by tab
       if (product.estado !== activeTab) return false;
 
       // Filter by category
-      if (activeCategory !== 'todos' && product.categoria !== activeCategory) return false;
+      if (activeCategory !== "todos" && product.categoria !== activeCategory)
+        return false;
 
       // Filter by search
       if (searchQuery) {
@@ -35,7 +45,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
           product.nombre.toLowerCase().includes(query) ||
           product.marca.toLowerCase().includes(query) ||
           product.descripcion.toLowerCase().includes(query) ||
-          product.tags.some(tag => tag.toLowerCase().includes(query))
+          product.tags.some((tag) => tag.toLowerCase().includes(query))
         );
       }
 
@@ -53,27 +63,27 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
   const nextBatch = Math.min(itemsToShow + 12, filteredProducts.length);
 
   const categories = useMemo(() => {
-    const cats = new Set(CATALOG.map(p => p.categoria));
+    const cats = new Set(CATALOG.map((p) => p.categoria));
     return Array.from(cats);
   }, []);
 
   const toggleCompare = (product: Product) => {
-    if (compareProducts.find(p => p.id === product.id)) {
-      setCompareProducts(compareProducts.filter(p => p.id !== product.id));
-      toast.success('Producto removido de la comparación');
+    if (compareProducts.find((p) => p.id === product.id)) {
+      setCompareProducts(compareProducts.filter((p) => p.id !== product.id));
+      toast.success("Producto removido de la comparación");
     } else {
       if (compareProducts.length >= 3) {
-        toast.error('Máximo 3 productos para comparar');
+        toast.error("Máximo 3 productos para comparar");
         return;
       }
       setCompareProducts([...compareProducts, product]);
-      toast.success('Producto agregado a la comparación');
+      toast.success("Producto agregado a la comparación");
     }
   };
 
   return (
     <section id="catalogo" className="bg-[#f7f7f7] py-20">
-      <div className="container mx-auto px-6">
+      <div className="w-full lg:max-w-[1024px]   xl:max-w-[1280px]  2xl:max-w-[1536px] mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-8">
           <div>
@@ -84,7 +94,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
               </span>
             </div>
             <h2 className="font-normal text-4xl md:text-5xl lg:text-6xl text-zinc-950">
-              MAQUINARIA AGRÍCOLA
+              MAQUINARIAS AGRÍCOLAS
             </h2>
           </div>
 
@@ -92,28 +102,28 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
           <div className="flex border-2 border-zinc-950">
             <button
               onClick={() => {
-                setActiveTab('nuevo');
-                setActiveCategory('todos');
-                setSearchQuery('');
+                setActiveTab("nuevo");
+                setActiveCategory("todos");
+                setSearchQuery("");
               }}
               className={`px-8 py-3 text-sm font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
-                activeTab === 'nuevo'
-                  ? 'bg-zinc-950 text-white'
-                  : 'bg-transparent text-zinc-950 hover:bg-zinc-100'
+                activeTab === "nuevo"
+                  ? "bg-zinc-950 text-white"
+                  : "bg-transparent text-zinc-950 hover:bg-zinc-100"
               }`}
             >
               Nuevos
             </button>
             <button
               onClick={() => {
-                setActiveTab('usado');
-                setActiveCategory('todos');
-                setSearchQuery('');
+                setActiveTab("usado");
+                setActiveCategory("todos");
+                setSearchQuery("");
               }}
               className={`px-8 py-3 text-sm font-semibold tracking-wider uppercase transition-colors cursor-pointer ${
-                activeTab === 'usado'
-                  ? 'bg-zinc-950 text-white'
-                  : 'bg-transparent text-zinc-950 hover:bg-zinc-100'
+                activeTab === "usado"
+                  ? "bg-zinc-950 text-white"
+                  : "bg-transparent text-zinc-950 hover:bg-zinc-100"
               }`}
             >
               Usados
@@ -135,7 +145,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery('')}
+                onClick={() => setSearchQuery("")}
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-950 cursor-pointer"
               >
                 <X className="w-5 h-5" />
@@ -147,23 +157,23 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-2">
               <button
-                onClick={() => setActiveCategory('todos')}
+                onClick={() => setActiveCategory("todos")}
                 className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full border-2 transition-all cursor-pointer ${
-                  activeCategory === 'todos'
-                    ? 'bg-zinc-950 text-white border-zinc-950'
-                    : 'bg-white text-zinc-950 border-zinc-950 hover:bg-zinc-100'
+                  activeCategory === "todos"
+                    ? "bg-zinc-950 text-white border-zinc-950"
+                    : "bg-white text-zinc-950 border-zinc-950 hover:bg-zinc-100"
                 }`}
               >
                 Todos
               </button>
-              {categories.map(cat => (
+              {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-full border-2 transition-all cursor-pointer ${
                     activeCategory === cat
-                      ? 'bg-zinc-950 text-white border-zinc-950'
-                      : 'bg-white text-zinc-950 border-zinc-950 hover:bg-zinc-100'
+                      ? "bg-zinc-950 text-white border-zinc-950"
+                      : "bg-white text-zinc-950 border-zinc-950 hover:bg-zinc-100"
                   }`}
                 >
                   {CATEGORY_LABELS[cat as keyof typeof CATEGORY_LABELS]}
@@ -172,20 +182,24 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
             </div>
 
             {/* View Mode Toggle */}
-            <div className="flex gap-2 bg-white border border-zinc-300 rounded-lg p-1">
+            <div className="gap-2 bg-white border border-zinc-300 rounded-lg p-1 hidden md:flex">
               <button
-                onClick={() => setViewMode('grid')}
+                onClick={() => setViewMode("grid")}
                 className={`p-2 rounded transition-colors cursor-pointer ${
-                  viewMode === 'grid' ? 'bg-zinc-950 text-white' : 'text-zinc-400 hover:text-zinc-950'
+                  viewMode === "grid"
+                    ? "bg-zinc-950 text-white"
+                    : "text-zinc-400 hover:text-zinc-950"
                 }`}
                 aria-label="Vista en cuadrícula"
               >
                 <Grid3x3 className="w-5 h-5" />
               </button>
               <button
-                onClick={() => setViewMode('list')}
+                onClick={() => setViewMode("list")}
                 className={`p-2 rounded transition-colors cursor-pointer ${
-                  viewMode === 'list' ? 'bg-zinc-950 text-white' : 'text-zinc-400 hover:text-zinc-950'
+                  viewMode === "list"
+                    ? "bg-zinc-950 text-white"
+                    : "text-zinc-400 hover:text-zinc-950"
                 }`}
                 aria-label="Vista en lista"
               >
@@ -198,24 +212,31 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
         {/* Results Count */}
         <div className="flex items-center justify-between mb-6">
           <p className="text-sm text-zinc-500">
-            Mostrando {visibleProducts.length} de {filteredProducts.length} {filteredProducts.length === 1 ? 'producto' : 'productos'}
+            Mostrando {visibleProducts.length} de {filteredProducts.length}{" "}
+            {filteredProducts.length === 1 ? "producto" : "productos"}
           </p>
         </div>
 
         {/* Products Grid/List */}
         {filteredProducts.length === 0 ? (
           <div className="text-center py-20">
-            <div className="text-6xl mb-4">🚜</div>
-            <h3 className="font-normal text-2xl text-zinc-950 mb-2">
+            
+            <img
+              src={sinResultados}
+              alt=""
+              className="h-auto w-150 object-contain mx-auto mb-8"
+            />
+            <h3 className="font-normal text-4xl text-zinc-950 mb-2">
               No se encontraron productos
             </h3>
             <p className="text-zinc-500 mb-6">
-              Intentá con otros filtros o contactanos para consultar disponibilidad
+              Intentá con otros filtros o contactanos para consultar
+              disponibilidad
             </p>
             <button
               onClick={() => {
-                setSearchQuery('');
-                setActiveCategory('todos');
+                setSearchQuery("");
+                setActiveCategory("todos");
               }}
               className="bg-zinc-950 text-white px-6 py-3 font-semibold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
             >
@@ -225,9 +246,9 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
         ) : (
           <div
             className={
-              viewMode === 'grid'
-                ? 'grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
-                : 'space-y-4'
+              viewMode === "grid"
+                ? "grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                : "space-y-4"
             }
           >
             {visibleProducts.map((product, index) => (
@@ -238,7 +259,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
                 index={index}
                 onViewDetails={() => setSelectedProduct(product)}
                 onToggleCompare={() => toggleCompare(product)}
-                isInCompare={compareProducts.some(p => p.id === product.id)}
+                isInCompare={compareProducts.some((p) => p.id === product.id)}
               />
             ))}
           </div>
@@ -249,21 +270,24 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
           <div className="mt-16 max-w-2xl mx-auto">
             {/* Progress Text */}
             <p className="text-center text-sm font-semibold text-zinc-700 mb-4">
-              {visibleProducts.length} productos vistos de {filteredProducts.length}
+              {visibleProducts.length} productos vistos de{" "}
+              {filteredProducts.length}
             </p>
 
             {/* Progress Bar */}
             <div className="w-full h-2 bg-zinc-300 rounded-full mb-8 overflow-hidden">
               <div
                 className="h-full bg-zinc-950 transition-all duration-500"
-                style={{ width: `${(visibleProducts.length / filteredProducts.length) * 100}%` }}
+                style={{
+                  width: `${(visibleProducts.length / filteredProducts.length) * 100}%`,
+                }}
               />
             </div>
 
             {/* Load More Button */}
             <div className="flex justify-center">
               <button
-                onClick={() => setItemsToShow(prev => prev + 12)}
+                onClick={() => setItemsToShow((prev) => prev + 12)}
                 className="bg-transparent text-zinc-950 px-8 py-3 font-semibold text-sm tracking-wide border-2 border-zinc-950 transition-all hover:bg-zinc-950 hover:text-white cursor-pointer"
               >
                 Ver los siguientes productos
@@ -302,7 +326,9 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
         products={compareProducts}
         isOpen={compareDrawerOpen}
         onClose={() => setCompareDrawerOpen(false)}
-        onRemove={(product) => setCompareProducts(compareProducts.filter(p => p.id !== product.id))}
+        onRemove={(product) =>
+          setCompareProducts(compareProducts.filter((p) => p.id !== product.id))
+        }
       />
     </section>
   );

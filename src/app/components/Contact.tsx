@@ -81,7 +81,7 @@ export function Contact() {
 
   return (
     <section id="contacto" className="bg-yellow-400 py-20">
-      <div className="container mx-auto px-6">
+      <div className="w-full lg:max-w-[1024px]   xl:max-w-[1280px]  2xl:max-w-[1536px] mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Info */}
           <motion.div

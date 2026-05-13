@@ -46,7 +46,7 @@ export function CompareDrawer({ products, isOpen, onClose, onRemove }: CompareDr
             </h3>
             <button
               onClick={onClose}
-              className="w-10 h-10 rounded-full bg-zinc-950 text-white flex items-center justify-center hover:bg-yellow-400 hover:text-zinc-950 transition-colors"
+              className="w-10 h-10 rounded-full bg-zinc-950 text-white flex items-center justify-center hover:bg-yellow-400 hover:text-zinc-950 transition-colors cursor-pointer"
               aria-label="Cerrar"
             >
               <X className="w-5 h-5" />

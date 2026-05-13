@@ -16,7 +16,7 @@ export function Footer() {
 
   return (
     <footer className="bg-zinc-950 text-white">
-      <div className="container mx-auto px-6 py-14">
+      <div className="w-full lg:max-w-[1024px]   xl:max-w-[1280px]  2xl:max-w-[1536px] mx-auto px-6 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
@@ -33,8 +33,8 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-white/50 leading-relaxed mb-4">
-              Concesionario oficial Pauny y distribuidor Gravo.
-              Sembradoras, acoplados e implementos.
+              Concesionario oficial Pauny y distribuidor Gravo. Sembradoras,
+              acoplados e implementos.
             </p>
             <div className="flex gap-3">
               <a
@@ -74,7 +74,7 @@ export function Footer() {
                 <button
                   key={item}
                   onClick={() => scrollToSection("catalogo")}
-                  className="block text-sm text-white/60 hover:text-yellow-400 transition-colors text-left"
+                  className="block text-sm text-white/60 hover:text-yellow-400 transition-colors text-left cursor-pointer"
                 >
                   {item}
                 </button>
@@ -99,7 +99,7 @@ export function Footer() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block text-sm text-white/60 hover:text-yellow-400 transition-colors text-left"
+                  className="block text-sm text-white/60 hover:text-yellow-400 transition-colors text-left cursor-pointer"
                 >
                   {item.label}
                 </button>
@@ -108,7 +108,7 @@ export function Footer() {
                 href="https://www.instagram.com/humbertoranzugliasrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-sm text-white/60 hover:text-yellow-400 transition-colors"
+                className="block text-sm text-white/60 hover:text-yellow-400 transition-colors cursor-pointer"
               >
                 Instagram
               </a>
@@ -131,15 +131,15 @@ export function Footer() {
                 2923 43 1570
               </a>
               <a
-                href="mailto:info@humbertoranzuglia.com.ar"
+                href="mailto:info@ranzugliasrl.com.ar"
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-yellow-400 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                info@humbertoranzuglia.com.ar
+                info@ranzugliasrl.com.ar
               </a>
               <div className="flex items-center gap-2 text-sm text-white/60">
                 <MapPin className="w-4 h-4" />
-                Coronel Pringles, Bs. As.
+                Av. 25 de Mayo 1541, Coronel Pringles, Bs. As.
               </div>
             </div>
           </div>
@@ -148,12 +148,11 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="container mx-auto px-6 py-5">
+        <div className="w-full lg:max-w-[1024px]   xl:max-w-[1280px]  2xl:max-w-[1536px] mx-auto px-6 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
             <div>© {year} Humberto Ranzuglia S.R.L.</div>
             <div>
-              Concesionario Pauny · Distribuidor Gravo · Coronel
-              Pringles
+              Concesionario Pauny · Distribuidor Gravo · Coronel Pringles
             </div>
           </div>
         </div>

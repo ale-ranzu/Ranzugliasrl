@@ -22,7 +22,7 @@ const brands = [
 export function Brands() {
   return (
     <section id="marcas" className="bg-yellow-400 py-16">
-      <div className="container mx-auto px-6">
+      <div className="w-full lg:max-w-[1024px]   xl:max-w-[1280px]  2xl:max-w-[1536px] mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-3">
@@ -52,7 +52,7 @@ export function Brands() {
               `}
             >
               {brand.text ? (
-                <span className="font-normal text-xl text-zinc-950">
+                <span className="font-black text-xl text-zinc-950">
                   {brand.name}
                 </span>
               ) : brand.image ? (

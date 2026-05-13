@@ -68,7 +68,7 @@ export function Financing() {
       id="financiamiento"
       className="bg-zinc-900 py-20 border-y border-white/5"
     >
-      <div className="container mx-auto px-6">
+      <div className="w-full lg:max-w-[1024px]   xl:max-w-[1280px]  2xl:max-w-[1536px] mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-4">
