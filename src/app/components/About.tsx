@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import paunyLogo from '../../imports/pauny.png';
 
 const stats = [
-  { number: '35+', label: 'Años en el mercado' },
+  { number: '50+', label: 'Años en el mercado' },
   { number: '10+', label: 'Marcas distribuidas' },
   { number: 'Pauny', label: 'Concesionario oficial' },
   { number: 'Gravo', label: 'Distribuidor autorizado' },
@@ -27,16 +27,13 @@ export function About() {
             viewport={{ once: true, margin: '-50px' }}
           >
             <h2 className="font-normal text-4xl md:text-5xl lg:text-6xl text-zinc-950 mb-6 leading-none">
-              Potencia y solidez<br />en el campo
+              Potencia y solidez en el campo
             </h2>
             <p className="text-lg text-zinc-700 leading-relaxed mb-4">
-              Desde 1990, Humberto Ranzuglia S.R.L. es sinónimo de confianza en la región de Coronel Pringles.
-              Somos concesionarios oficiales de Pauny, distribuidores de Gravo y representantes de las marcas
-              líderes del agro argentino.
+             Somos concesionario oficial de Pauny, distribuidores de Gravo y trabajamos junto a las marcas líderes del agro argentino.
             </p>
             <p className="text-base text-zinc-600 leading-relaxed mb-8">
-              Nuestro equipo conoce el campo porque vive en él. Asesoramiento honesto, postventa comprometida
-              y repuestos siempre disponibles.
+             Nuestro equipo conoce el campo de verdad, porque forma parte de él. Por eso ofrecemos asesoramiento claro, atención postventa y repuestos disponibles para que nunca te detengas.
             </p>
 
             <div className="flex items-center gap-4 pt-6 border-t border-zinc-200">

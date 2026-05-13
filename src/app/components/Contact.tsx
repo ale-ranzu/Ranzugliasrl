@@ -58,12 +58,12 @@ export function Contact() {
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Dirección",
-      value: "Coronel Pringles · Buenos Aires",
+      value: "Av. 25 de Mayo 1541 · Coronel Pringles · Buenos Aires",
     },
     {
       icon: <Clock className="w-5 h-5" />,
       label: "Horario",
-      value: "Lun–Vie 8–13 / 15–19 · Sáb 8–13",
+      value: "Lun–Vie 8 a 13h / 15 a 19h · Sáb 8 a 13h",
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -97,15 +97,11 @@ export function Contact() {
             </div>
 
             <h2 className="font-normal text-5xl md:text-6xl lg:text-7xl  text-zinc-950 mb-6 leading-none">
-              Pedí tu
-              <br />
-              presupuesto
+              Pedí tu presupuesto
             </h2>
 
-            <p className="text-base text-zinc-950/80 mb-10 leading-relaxed max-w-md">
-              Te respondemos por WhatsApp en el mismo día. Si
-              preferís, vení al local — te asesoramos
-              personalmente.
+            <p className="text-lg text-zinc-950/80 mb-10 leading-relaxed max-w-md">
+             Te respondemos por WhatsApp en el día o te esperamos en nuestro local para asesorarte personalmente.
             </p>
 
             {/* Contact Info */}
@@ -119,7 +115,7 @@ export function Contact() {
                   transition={{ delay: index * 0.1 }}
                   className="grid grid-cols-[100px,1fr] items-baseline gap-4 py-3 border-b border-zinc-950/10"
                 >
-                  <div className="flex items-center gap-2 text-xs font-black tracking-wider uppercase text-zinc-950/50">
+                  <div className="flex items-center gap-2 text-sm font-black tracking-wider uppercase text-zinc-950/50">
                     {info.icon}
                     {info.label}
                   </div>
@@ -136,12 +132,12 @@ export function Contact() {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="font-semibold text-sm text-zinc-950 hover:underline"
+                      className="font-semibold text-base text-zinc-950 hover:underline"
                     >
                       {info.value}
                     </a>
                   ) : (
-                    <span className="font-semibold text-sm text-zinc-950">
+                    <span className="font-semibold text-base text-zinc-950">
                       {info.value}
                     </span>
                   )}

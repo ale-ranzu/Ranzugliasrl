@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X } from 'lucide-react';
+import { DeleteIcon, Trash2, X } from 'lucide-react';
 import { Product } from '../data/catalog';
 
 interface CompareDrawerProps {
@@ -37,11 +37,11 @@ export function CompareDrawer({ products, isOpen, onClose, onRemove }: CompareDr
           exit={{ y: '100%', opacity: 0 }}
           transition={{ type: 'spring', damping: 25 }}
           onClick={(e) => e.stopPropagation()}
-          className="bg-white w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-t-2xl md:rounded-2xl border-2 border-zinc-950 shadow-2xl"
+          className="bg-white w-full md:max-w-[80rem] max-h-[90vh] p-4 overflow-hidden rounded-t-2xl md:rounded-2xl border-2 border-zinc-950 shadow-2xl"
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-zinc-200">
-            <h3 className="font-normal text-2xl tracking-tight text-zinc-950">
+          <div className="flex items-center justify-between pb-6 border-b border-zinc-200">
+            <h3 className="font-normal text-3xl tracking-tight text-zinc-950">
               Comparar Productos
             </h3>
             <button
@@ -66,10 +66,10 @@ export function CompareDrawer({ products, isOpen, onClose, onRemove }: CompareDr
                       <div className="relative">
                         <button
                           onClick={() => onRemove(product)}
-                          className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors z-10"
+                          className="absolute top-1 right-8 text-red-500 flex items-center justify-center hover:text-red-600 transition-colors z-10 cursor-pointer"
                           aria-label="Remover"
                         >
-                          <X className="w-3 h-3" />
+                          <Trash2 className="w-6 h-6" />
                         </button>
                         <div className="font-black text-lg text-zinc-950 text-left">
                           {product.nombre}

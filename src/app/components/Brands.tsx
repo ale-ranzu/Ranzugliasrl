@@ -21,13 +21,13 @@ const brands = [
 
 export function Brands() {
   return (
-    <section id="marcas" className="bg-zinc-50 py-16">
+    <section id="marcas" className="bg-yellow-400 py-16">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-0.5 w-8 bg-zinc-500" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-500">
+              <div className="h-0.5 w-8 bg-zinc-700" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-700">
                 Marcas que distribuimos
               </span>
             </div>

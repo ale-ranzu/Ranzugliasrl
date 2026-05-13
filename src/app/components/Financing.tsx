@@ -7,42 +7,36 @@ import logoPampa from "../../imports/banco_pampa.svg?url";
 import logoGalicia from "../../imports/Logo_Banco_Galicia.svg?url";
 import logoMacro from "../../imports/Logo_Banco_Macro.svg?url";
 import logoBice from "../../imports/Bice-logo.svg?url";
+import logoPauny from "../../imports/pauny_logo_negativo.svg?url";
 
 const financingOptions = [
   {
-    icon: <CreditCard className="w-8 h-8" />,
-    title: "Financiamiento Pauny",
+    
     desc: "Plan oficial de financiamiento del fabricante. Condiciones preferenciales para tractores nuevos de la línea Pauny.",
     featured: true,
-    logo: null,
+    logo: logoPauny,
   },
   {
-    title: "Banco Nación",
     desc: "Créditos para el agro del BNA. Tasas bonificadas para productores agropecuarios.",
     logo: logoNacion,
   },
   {
-    title: "Banco Provincia",
     desc: "Línea de crédito para maquinaria agrícola. Financiamiento a medida del productor bonaerense.",
     logo: logoProvincia,
   },
   {
-    title: "Banco Macro",
     desc: "Créditos prendarios y líneas agro. Cuotas fijas en pesos o dólares.",
     logo: logoMacro,
   },
   {
-    title: "Banco Galicia",
     desc: "Línea de crédito para maquinaria y equipamiento agrícola.",
     logo: logoGalicia,
   },
   {
-    title: "Banco Pampa",
     desc: "Financiamiento regional para productores del sudoeste bonaerense. Cercanía y conocimiento del campo.",
     logo: logoPampa,
   },
   {
-    title: "BICE",
     desc: "Banco de Inversión y Comercio Exterior. Líneas especiales para inversión en maquinaria.",
     logo: logoBice,
   },
@@ -97,7 +91,7 @@ export function Financing() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-16">
           {financingOptions.map((option, index) => (
             <motion.div
-              key={option.title}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -107,20 +101,17 @@ export function Financing() {
                 ${option.featured ? "border-yellow-400/50 bg-yellow-400/10" : "border-white/10"}
               `}
             >
-              <div className="mb-4 h-12 flex items-center">
+              <div className="mb-4 h-8 flex items-center">
                 {option.logo ? (
                   <img
                     src={option.logo}
-                    alt={option.title}
+                    alt=""
                     className="h-full w-auto object-contain"
                   />
                 ) : (
                   <div className="text-yellow-400">{option.icon}</div>
                 )}
               </div>
-              <h3 className="text-white mb-3 text-[28px]">
-                {option.title}
-              </h3>
               <p className="text-white/60 leading-relaxed mb-4 text-[16px]">
                 {option.desc}
               </p>

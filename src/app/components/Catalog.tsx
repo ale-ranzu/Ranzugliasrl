@@ -131,7 +131,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
               placeholder="Buscar por modelo, marca, potencia..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white border border-zinc-300 rounded-lg focus:border-zinc-950 focus:outline-none transition-colors text-sm"
+              className="w-full pl-12 pr-4 py-4 bg-white border border-zinc-300 rounded-lg focus:border-zinc-950 focus:outline-none transition-colors text-sm text-zinc-950"
             />
             {searchQuery && (
               <button
