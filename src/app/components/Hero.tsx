@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import tractorImage from "../../imports/pauny-540C-Bravo.png";
+import tractorImage from "../../imports/pauny/pauny-540C-Bravo.png";
 
 export function Hero() {
   const scrollToSection = (id: string) => {

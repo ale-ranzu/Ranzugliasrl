@@ -1,13 +1,13 @@
 import { useState, useRef } from "react";
 import { motion } from "motion/react";
 import { CreditCard, Calculator } from "lucide-react";
-import logoNacion from "../../imports/Banco_Naci_n.svg?url";
-import logoProvincia from "../../imports/Banco_Provincia__Bs.As.__2021_.svg?url";
-import logoPampa from "../../imports/banco_pampa.svg?url";
-import logoGalicia from "../../imports/Logo_Banco_Galicia.svg?url";
-import logoMacro from "../../imports/Logo_Banco_Macro.svg?url";
-import logoBice from "../../imports/Bice-logo.svg?url";
-import logoPauny from "../../imports/pauny_logo_negativo.svg?url";
+import logoNacion from "../../imports/bancos/Banco_Naci_n.svg?url";
+import logoProvincia from "../../imports/bancos/Banco_Provincia__Bs.As.__2021_.svg?url";
+import logoPampa from "../../imports/bancos/banco_pampa.svg?url";
+import logoGalicia from "../../imports/bancos/Logo_Banco_Galicia.svg?url";
+import logoMacro from "../../imports/bancos/Logo_Banco_Macro.svg?url";
+import logoBice from "../../imports/bancos/Bice-logo.svg?url";
+import logoPauny from "../../imports/pauny/pauny_logo_negativo.svg?url";
 
 const financingOptions = [
   {

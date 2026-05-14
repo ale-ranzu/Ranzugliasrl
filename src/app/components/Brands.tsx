@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
-import paunyLogo from "../../imports/pauny.png";
-import gherardiLogo from "../../imports/gherardi.png";
-import bertiniLogo from "../../imports/bertini.png";
-import pamperoLogo from "../../imports/pampero.png";
-import belenLogo from "../../imports/belen.png";
-import demsLogo from "../../imports/dems.png";
-import fametLogo from "../../imports/famet.jpg";
+import paunyLogo from "../../imports/pauny/pauny.png";
+import gherardiLogo from "../../imports/marcas/gherardi.png";
+import bertiniLogo from "../../imports/marcas/bertini.png";
+import pamperoLogo from "../../imports/marcas/pampero.png";
+import belenLogo from "../../imports/marcas/belen.png";
+import demsLogo from "../../imports/marcas/dems.png";
+import fametLogo from "../../imports/marcas/famet.jpg";
 
 const brands = [
   { name: "Pauny", image: paunyLogo, featured: true },

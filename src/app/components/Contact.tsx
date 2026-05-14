@@ -161,7 +161,7 @@ export function Contact() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit}
-                  className="bg-white rounded-xl p-8 shadow-[8px_8px_0_0_rgba(10,10,10,0.5)] border-2 border-zinc-950"
+                  className="bg-white p-8"
                 >
                   <h3 className="font-normal text-2xl text-zinc-950 mb-6">
                     Cotizá tu maquinaria
@@ -187,7 +187,7 @@ export function Contact() {
                         }
                         placeholder="Juan Pérez"
                         required
-                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-transparent"
+                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 placeholder:text-zinc-400"
                       />
                     </div>
 
@@ -210,7 +210,7 @@ export function Contact() {
                         }
                         placeholder="2923 43 1570"
                         required
-                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-transparent"
+                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 placeholder:text-zinc-400"
                       />
                       <p className="text-xs text-zinc-400 mt-1">
                         Te respondemos por WhatsApp.
@@ -233,7 +233,7 @@ export function Contact() {
                             tipo: e.target.value,
                           })
                         }
-                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-transparent text-zinc-950 font-medium"
+                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 font-medium"
                         style={{
                           appearance: "none",
                           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
@@ -318,7 +318,7 @@ export function Contact() {
                           })
                         }
                         placeholder="tu@email.com"
-                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-transparent"
+                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 placeholder:text-zinc-400"
                       />
                     </div>
 
@@ -340,7 +340,7 @@ export function Contact() {
                           })
                         }
                         placeholder="Ej: Coronel Pringles"
-                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-transparent"
+                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 placeholder:text-zinc-400"
                       />
                     </div>
 
@@ -362,7 +362,7 @@ export function Contact() {
                         }
                         placeholder="Contanos el uso que le vas a dar, tamaño del campo, etc."
                         rows={3}
-                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm resize-vertical bg-transparent text-zinc-950"
+                        className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm resize-vertical bg-white text-zinc-950 placeholder:text-zinc-400"
                       />
                     </div>
 

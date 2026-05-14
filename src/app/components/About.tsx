@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import paunyLogo from '../../imports/pauny.png';
+import paunyLogo from '../../imports/pauny/pauny.png';
 
 const stats = [
   { number: '50+', label: 'Años en el mercado' },
