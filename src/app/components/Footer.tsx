@@ -1,5 +1,5 @@
 import { Instagram, Phone, Mail, MapPin } from "lucide-react";
-import logoHR from "../../imports/logo-HR.png";
+import logoHR from "../../imports/humberto-ranzuglia.svg";
 
 export function Footer() {
   const scrollToSection = (id: string) => {

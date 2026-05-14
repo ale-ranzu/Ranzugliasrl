@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import logoHR from "../../imports/logo-HR.png";
+import logoHR from "../../imports/humberto-ranzuglia.svg";
 
 const navItems = [
   { id: "inicio", label: "Inicio" },
