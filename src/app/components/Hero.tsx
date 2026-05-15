@@ -56,7 +56,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative z-20 max-w-2xl pr-8 lg:max-w-3xl"
+            className="relative z-20 max-w-full md:max-w-[32rem] pr-8 xl:max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="h-0.5 w-12 bg-yellow-400" />
@@ -121,7 +121,7 @@ export function Hero() {
                 ease: "easeInOut",
               },
             }}
-            className="absolute -right-70 lg:-right-80 top-[45%] -translate-y-1/2 w-full h-full lg:w-[1400px] lg:h-[1050px] xl:w-[1600px] xl:h-[1200px] hidden md:block pointer-events-none z-10"
+            className="absolute -right-80 lg:-right-165 2xl:-right-115 top-[55%] -translate-y-1/2 w-full h-full lg:w-[1400px] lg:h-[1050px] xl:w-[1600px] xl:h-[1200px] hidden md:block pointer-events-none z-10"
             style={{
               filter:
                 "drop-shadow(0 40px 120px rgba(250, 204, 21, 0.3)) drop-shadow(0 0 60px rgba(250, 204, 21, 0.2))",
@@ -130,7 +130,7 @@ export function Hero() {
             <img
               src={tractorImage}
               alt="Pauny 540 C Bravo"
-              className="w-10/12 lg:w-full h-full object-contain"
+              className="md:w-[60%] 2xl:w-3/4 h-full object-contain"
             />
           </motion.div>
 
