@@ -27,12 +27,22 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    toast.success("¡Consulta enviada con éxito!");
+      if (!res.ok) throw new Error("Error al enviar");
+
+      setIsSuccess(true);
+      toast.success("¡Consulta enviada con éxito!");
+    } catch {
+      toast.error("No se pudo enviar. Intentá de nuevo o escribinos por WhatsApp.");
+    } finally {
+      setIsSubmitting(false);
+    }
 
     setTimeout(() => {
       setIsSuccess(false);

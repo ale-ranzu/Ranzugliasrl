@@ -237,6 +237,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
               onClick={() => {
                 setSearchQuery("");
                 setActiveCategory("todos");
+                setActiveTab("nuevo");
               }}
               className="bg-zinc-950 text-white px-6 py-3 font-semibold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
             >
