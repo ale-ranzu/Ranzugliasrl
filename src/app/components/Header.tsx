@@ -45,15 +45,13 @@ export function Header() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const offset = 90;
-      window.scrollTo({
-        top: el.offsetTop - offset,
-        behavior: "smooth",
-      });
-      setIsOpen(false);
-    }
+    setIsOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 50);
   };
 
   return (
@@ -77,7 +75,7 @@ export function Header() {
               alt="Humberto Ranzuglia"
               className="h-16 w-auto"
             />
-            <div className="text-left">
+            <div className="text-left hidden sm:block">
               <div className="tracking-wider text-white text-[20px] font-[Anton]">
                 HUMBERTO RANZUGLIA S.R.L.
               </div>
@@ -137,12 +135,9 @@ export function Header() {
             className="lg:hidden border-t border-white/10 bg-zinc-950"
           >
             <div className="w-full max-w-[1800px] mx-auto px-6 py-4 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.button
+              {navItems.map((item) => (
+                <button
                   key={item.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
                   onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left py-3 px-4 text-sm font-semibold tracking-wider uppercase transition-colors border-b border-white/5 cursor-pointer ${
                     activeSection === item.id
@@ -151,7 +146,7 @@ export function Header() {
                   }`}
                 >
                   {item.label}
-                </motion.button>
+                </button>
               ))}
             </div>
           </motion.div>
