@@ -1,3 +1,58 @@
+import bertiniNeu from '../../imports/bertini/bertini-Modelo-16mil-1.png';
+import gherardiDrill600 from '../../imports/gherardi/gherardi-AIR-DRILL-G-600.png';
+import gherardiDrill800 from '../../imports/gherardi/gherardi-AIR-DRILL-G-800.png';
+import gherardiGF from '../../imports/gherardi/gherardi-G100-G100M-G117.png';
+import gherardiPlanter900 from '../../imports/gherardi/gherardi-G-900-mono-disco.png';
+import gherardiComb600 from '../../imports/gherardi/gherardi-combinadas-G-600.png';
+import gherardiPlanter600 from '../../imports/gherardi/gherardi-AIR-PLANTER-G-600.png';
+import gherardiTolva from '../../imports/gherardi/gherardi-g-600.webp';
+import pamperoLH4Alas from '../../imports/pampero/pampero-LH-4-Alas-E-1-1.png';
+import pamperoLH4AlasE from '../../imports/pampero/pampero-LH 4 ALAS ESPECIAL.png';
+import pamperoLH5280 from '../../imports/pampero/pampero-LH-5280.png';
+import pamperoRII from '../../imports/pampero/pampero-RII-1.png';
+import pamperoRIIA from '../../imports/pampero/pampero-R-II-A-1.png';
+import pamperoRIIE from '../../imports/pampero/pampero-R-II-E-1.png';
+import pamperoRIII from '../../imports/pampero/pampero-RIII-1.png';
+import pamperoRIIIE from '../../imports/pampero/pampero-R-III-E-1.png';
+import pamperoRTE1828 from '../../imports/pampero/pampero-RTE-18-28-1.png';
+import pamperoRTE3240 from '../../imports/pampero/pampero-RTE-32-40-1-1.png';
+import pamperoGM4500 from '../../imports/pampero/pampero-GM-4500-1-1.png';
+import pamperoGM7500 from '../../imports/pampero/pampero-GM-7500-1.png';
+import pamperoDescomp from '../../imports/pampero/pampero-descompactador.png';
+import pamperoDelta from '../../imports/pampero/pampero-DELTA-1.png';
+import pamperoSTC from '../../imports/pampero/pampero-STC-1.png';
+import pamperoTetra from '../../imports/pampero/pampero-TETRA-1.png';
+import pamperoMixer4 from '../../imports/pampero/pampero-MIXER-4-1-1.png';
+import pamperoMixer7 from '../../imports/pampero/pampero-MIXER-7-2.png';
+import pamperoMixer10 from '../../imports/pampero/pampero-MIXER-10-1-1.png';
+import pamperoMixer13 from '../../imports/pampero/pampero-MIXER-13-1_4013.png';
+import pamperoMixer17 from '../../imports/pampero/pampero-MIXER-17-1-1.png';
+import pamperoMixer14v from '../../imports/pampero/pampero-MIXER-14-1-1.png';
+import sylTolvaSemill from '../../imports/syl/syl-tolva-semilla-y-fertilizante.png';
+import sylTolvaSilero from '../../imports/syl/syl-tolva-10-mt3-Agroprecision-2.png';
+import sylPlayo from '../../imports/syl/syl-acoplados-playos---Topaz-Gigapixel,-escala-2x.png';
+import sylGruaFija from '../../imports/syl/syl-grua-fija.png';
+import sylGruaArrastre from '../../imports/syl/syl-grua-arrastre.png';
+import belenTanqueComb from '../../imports/belen/tanque-combustible.png';
+import belenTolvaArco from '../../imports/belen/acoplado-tolva-belen-20-tn.webp';
+import belenSF22tt from '../../imports/belen/semillas-y-fertilizantes-belen.png';
+import belenSF814 from '../../imports/belen/semillas-y-fertilizantes-belen-8-10-14.png';
+import belenFullTrailer from '../../imports/belen/full-trailer.png';
+import belenChasistanque from '../../imports/belen/chasis-tanque-fibra.png';
+import belenPlayos from '../../imports/belen/playos-rurales.png';
+import belenCarreton from '../../imports/belen/carreton-con-rampa.png';
+import belenVaquero from '../../imports/belen/acoplado-vaquero.png';
+import belenEspecial from '../../imports/belen/acoplado-especial.png';
+import belenVolcador from '../../imports/belen/carro-volcaodr.png';
+import belenCarroTaller from '../../imports/belen/carro-taller.png';
+import belenPala from '../../imports/belen/pala-hidraulica.png';
+import belenTanqueAereo from '../../imports/belen/tanque-aereo.png';
+import gravo504d from '../../imports/gravo/tractor-gravo-modelo504.webp';
+import gravoHWB604 from '../../imports/gravo/HWB-604.webp';
+import gravoHWB904 from '../../imports/gravo/HWB-904-CABINADO.webp';
+import gravoHWG1100 from '../../imports/gravo/Tractores-Gravo HWG-1100.webp';
+import gravoHWC1304 from '../../imports/gravo/HWC-1304-CABINADO.webp';
+import gravoHWC1604 from '../../imports/gravo/HWC-1604-CABINADO.webp';
 import pauny540C from '../../imports/pauny/pauny-540C-Bravo.png';
 import pauny580ie from '../../imports/pauny/pauny-580ie-Bravo.png';
 import pauny710ie from '../../imports/pauny/pauny-710ie-Bravo.png';
@@ -8,7 +63,7 @@ import pauny180A from '../../imports/pauny/pauny-pauny-180-A.png';
 export interface Product {
   id: string;
   estado: 'nuevo' | 'usado';
-  categoria: 'tractor-pauny' | 'tractor-gravo' | 'sembradora' | 'acoplado' | 'implemento' | 'vial';
+  categoria: 'tractor-pauny' | 'tractor-gravo' | 'sembradora' | 'rastra' | 'acoplado' | 'implemento' | 'vial';
   marca: string;
   nombre: string;
   hp?: string;
@@ -118,7 +173,7 @@ export const CATALOG: Product[] = [
     hp: '50 HP',
     tags: ['50 HP', 'Motor Laidong', 'Transmisión 8+2'],
     descripcion: 'Cap. carga 850 kg · Peso 1480 kg · Bomba 35 l/pm. Neumáticos estándar.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/r/tractor-gravo-modelo504-d-MARCELO-CARBONELL-AGRONEGOCIOS-agrofy-4-20260220121119.jpeg',
+    imagen: gravo504d,
     peso: '1.48 T',
     cabina: 'Abierta',
     origen: 'China (importado)',
@@ -132,7 +187,7 @@ export const CATALOG: Product[] = [
     hp: '60 HP',
     tags: ['60 HP', 'Motor Quanchai', '12F+12R'],
     descripcion: 'Cap. carga 1500 kg · Peso 2695 kg · Bomba 55 l/pm. Neumáticos 280/70 (frente) 380/70R28 (trasero).',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/r/tractor-gravo-modelo-hwb604-MARCELO-CARBONELL-AGRONEGOCIOS-agrofy-0-20260220121924.jpeg',
+    imagen: gravoHWB604,
     peso: '2.7 T',
     cabina: 'Abierta',
     origen: 'China (importado)',
@@ -146,7 +201,7 @@ export const CATALOG: Product[] = [
     hp: '90 HP',
     tags: ['90 HP', 'Motor Yuchai', 'Cabinado'],
     descripcion: 'Cap. carga 1500 kg · Peso 3345 kg · Transmisión 16F+8R · Bomba 65 l/pm.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/r/tractor-gravo-hwb-904-de-90hp--Borjes-Maquinarias-agrofy-8-20251210195627.jpeg',
+    imagen: gravoHWB904,
     peso: '3.35 T',
     cabina: 'Cerrada',
     origen: 'China (importado)',
@@ -160,7 +215,7 @@ export const CATALOG: Product[] = [
     hp: '100 HP',
     tags: ['100 HP', 'Motor Yuchai', 'Cabinado', '16F+8R'],
     descripcion: 'Cap. carga 2500 kg · Peso 3955 kg · Transmisión 16F+8R · Bomba 80 l/pm. Neumáticos 340/80R24 (frente) 420/85R34 (trasero).',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/r/tractores-gravo-hwg-1100-de-110hp-agricolas-doble-traccion-caja-16-8-schuttel-shift-con-tres-puntos-e-hidraulico-cabinado-con-motor-yuchai-potentes-y-versatiles-0.jpg',
+    imagen: gravoHWG1100,
     peso: '3.96 T',
     cabina: 'Cerrada',
     origen: 'China (importado)',
@@ -174,7 +229,7 @@ export const CATALOG: Product[] = [
     hp: '110 HP',
     tags: ['110 HP', 'Motor Yuchai', 'Cabinado', '16F+8R'],
     descripcion: 'Cap. carga 2700 kg · Peso 4780 kg · Transmisión 16F+8R · Bomba 80 l/pm. Neumáticos 340/85R24 (frente) 420/85R34 (trasero).',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/r/tractores-gravo-hwg-1100-de-110hp-agricolas-doble-traccion-caja-16-8-schuttel-shift-con-tres-puntos-e-hidraulico-cabinado-con-motor-yuchai-potentes-y-versatiles-0.jpg',
+    imagen: gravoHWG1100,
     peso: '4.78 T',
     cabina: 'Cerrada',
     origen: 'China (importado)',
@@ -188,7 +243,7 @@ export const CATALOG: Product[] = [
     hp: '130 HP',
     tags: ['130 HP', 'Motor Yuchai', 'Cabinado', '16F+8R'],
     descripcion: 'Cap. carga 3300 kg · Peso 7410 kg · Transmisión 16F+8R · Bomba 80 l/pm. Neumáticos 420/70R28 (frente) 480/70R38 (trasero).',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/r/tractores-gravo-hwg-1304-de-130hp-agricolas-doble-traccion-caja-16-8-schuttel-shift-con-tres-puntos-e-hidraulico-cabinado-con-motor-yuchai-potentes-y-versatiles-7.jpg',
+    imagen: gravoHWC1304,
     peso: '7.41 T',
     cabina: 'Cerrada',
     origen: 'China (importado)',
@@ -202,7 +257,7 @@ export const CATALOG: Product[] = [
     hp: '165 HP',
     tags: ['165 HP', 'Motor Shangchai', 'Cabinado', '16F+8R'],
     descripcion: 'Cap. carga 3300 kg · Peso 7860 kg · Transmisión 16F+8R · Bomba 200 l/pm. Neumáticos 420/70R28 (frente) 480/75R38 (trasero).',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/r/tractores-gravo-hwc-1604-de-160hp-agricolas-doble-traccion-caja-16-8-schuttel-shift-con-tres-puntos-e-hidraulico-cabinado-con-motor-yuchai-potentes-y-versatiles-3.jpg',
+    imagen: gravoHWC1604,
     peso: '7.86 T',
     cabina: 'Cerrada c/ A.A.',
     origen: 'China (importado)',
@@ -216,7 +271,7 @@ export const CATALOG: Product[] = [
     hp: '185 HP',
     tags: ['185 HP', 'Motor Shangchai', 'ISOBUS', '32F+32R'],
     descripcion: 'Cap. carga 4000 kg · Peso 10380 kg · Transmisión 32F+32R con inversor y sincronizador · Eje delantero Carraro · Bomba 200 l/pm. Neumáticos 540/65R30 (frente) 650/65R42 (trasero). Navegación ISOBUS.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/r/tractores-gravo-hwc-1604-de-160hp-agricolas-doble-traccion-caja-16-8-schuttel-shift-con-tres-puntos-e-hidraulico-cabinado-con-motor-yuchai-potentes-y-versatiles-3.jpg',
+    imagen: gravoHWC1604,
     peso: '10.38 T',
     cabina: 'Cerrada c/ A.A.',
     origen: 'China (importado)',
@@ -231,7 +286,7 @@ export const CATALOG: Product[] = [
     nombre: 'Air Drill G 600',
     tags: ['Granos finos y gruesos', '41–57 líneas', '9–12,40 m'],
     descripcion: 'Siembra a chorrillo. Trenes independientes. Ancho de labor de 9 a 12,40 mts.',
-    imagen: 'https://www.gherardi.com.ar/wp-content/uploads/2018/02/0.jpg',
+    imagen: gherardiDrill600,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -244,7 +299,7 @@ export const CATALOG: Product[] = [
     nombre: 'Air Drill G 800',
     tags: ['35 líneas', 'Ancho 7,35 m', 'Siembra directa'],
     descripcion: '35 líneas a 21 cm. Ancho de labor 7,35 m. Alta precisión de siembra directa.',
-    imagen: 'https://www.gherardi.com.ar/wp-content/uploads/2018/01/0-9.jpg',
+    imagen: gherardiDrill800,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -257,7 +312,7 @@ export const CATALOG: Product[] = [
     nombre: 'Granos Finos G100 / G100M / G117',
     tags: ['Siembra directa', 'Cuchillas turbo', 'Doble roldana'],
     descripcion: 'Dosificadores de doble roldana externa. Tolva con removedor de semillas y deflector longitudinal. Cuchillas de siembra directa flotantes turbo. Caja selectora de velocidades.',
-    imagen: 'https://www.gherardi.com.ar/wp-content/uploads/2018/01/1-1024x768.jpg',
+    imagen: gherardiGF,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -270,7 +325,7 @@ export const CATALOG: Product[] = [
     nombre: 'Air Drill/Planter G 900',
     tags: ['Granos finos y gruesos', 'Mono disco', 'Doble disco', 'Combinada'],
     descripcion: 'Para granos finos y gruesos a chorrillo. Trenes independientes. Disponible en mono disco, doble disco o combinada.',
-    imagen: 'https://www.gherardi.com.ar/wp-content/uploads/2024/02/air-drill-planter-G-900.jpg',
+    imagen: gherardiPlanter900,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -283,7 +338,7 @@ export const CATALOG: Product[] = [
     nombre: 'Tolva Air Drill/Planter',
     tags: ['6.000 lts', '10.000 lts', '13.000 lts'],
     descripcion: 'Tolvas de gran capacidad (6.000 a 13.000 litros) para sembradoras Air Drill/Planter Gherardi. Construcción en acero de alta resistencia para maximizar la autonomía en siembra.',
-    imagen: 'https://www.gherardi.com.ar/wp-content/uploads/2024/02/tolvas-air-drill-planter.jpg',
+    imagen: gherardiTolva,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -296,7 +351,7 @@ export const CATALOG: Product[] = [
     nombre: 'Air Planter G 600 Combinada',
     tags: ['Granos gruesos y finos', 'Un solo paso', 'Tolva 600 lts'],
     descripcion: 'Sembradora combinada de precisión para granos gruesos y finos en un solo paso. Tolva de 600 litros. Dosificación exacta y adaptable a distintos cultivos.',
-    imagen: 'https://www.gherardi.com.ar/wp-content/uploads/2024/02/combinadas-G-600.jpg',
+    imagen: gherardiComb600,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -309,7 +364,7 @@ export const CATALOG: Product[] = [
     nombre: 'G-200 / G-300',
     tags: ['Granos gruesos', 'Siembra directa', 'Compacto'],
     descripcion: 'Sembradoras de granos gruesos modelos G-200 y G-300. Diseño compacto para siembra directa. Alta confiabilidad y bajo mantenimiento.',
-    imagen: 'https://www.gherardi.com.ar/wp-content/uploads/2018/01/0-6.jpg',
+    imagen: gherardiPlanter600,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -324,7 +379,7 @@ export const CATALOG: Product[] = [
     nombre: 'Sistema Neumático por Soplado',
     tags: ['8 MIL', '16 MIL', '22 MIL', '36 MIL', '50 MIL'],
     descripcion: 'Sistema neumático por soplado con ventajas sobre los sistemas de succión, dedos y placa. Modelos: 8 MIL, 10 MIL, 16 MIL, 22 MIL, 22 MIL Autotrailer, 36 MIL, 40 MIL y 50 MIL.',
-    imagen: 'https://www.bertini.com.ar/sitio/wp-content/uploads/2016/09/Modelo-16mil-1.jpg',
+    imagen: bertiniNeu,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -339,7 +394,7 @@ export const CATALOG: Product[] = [
     nombre: 'Tolva Semillera Fertilizante',
     tags: ['Con chimango', 'Divisorio', 'Hidráulico'],
     descripcion: 'Chasis en chapa 1/4. Chimango hidráulico 5 mts para carga y descarga. Doble visor y doble boquilla. Enganche trasero, paragolpe y soporte luces.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/o/tolva-semilla-y-fertilizante-s-Clanard-agrofy-0-20260116145826.jpeg',
+    imagen: sylTolvaSemill,
     peso: 'Consultar',
     cabina: 'Chimango 5 mts',
     origen: 'Armstrong, Santa Fe',
@@ -352,7 +407,7 @@ export const CATALOG: Product[] = [
     nombre: 'Tolva Silero',
     tags: ['Sin chimango', 'Lona', 'Boquilla descarga'],
     descripcion: 'Chasis en chapa 1/4. Tolva en chapa 12, parantes en 1/8. Arcos para lona y boquilla de descarga. Enganche trasero, paragolpe y soporte luces.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/t/o/tolva-syl-10-mt3-Agroprecision-2-S-A--agrofy-1-20250426232644.jpeg',
+    imagen: sylTolvaSilero,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Armstrong, Santa Fe',
@@ -365,7 +420,7 @@ export const CATALOG: Product[] = [
     nombre: 'Acoplado Playo 3/4 TN',
     tags: ['Playo', 'Piso antideslizante', 'Eje palanquilla'],
     descripcion: 'Chasis en chapa plegada. Barandas laterales de 45 cm. Aro giratorio a bolillas. Eje palanquilla en elásticos reforzados. Enganche trasero y paragolpes. Piso antideslizante.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/a/c/acoplados-playos-Viejo-Tala-agrofy-1-20250530192638.jpeg',
+    imagen: sylPlayo,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Armstrong, Santa Fe',
@@ -378,7 +433,7 @@ export const CATALOG: Product[] = [
     nombre: 'Acoplado Vaquero',
     tags: ['Hacienda', 'Puerta trasera', 'Guillotina'],
     descripcion: 'Puerta trasera con apertura total y guillotina central. Altura 2,1 mt. Rejilla para piso. Lanza fija. Parantes de puerta trasera en chapa plegada 3/8.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/a/c/acoplado-vaquero-sorazabal-agrofy-0-20260308211222.jpg',
+    imagen: undefined,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Armstrong, Santa Fe',
@@ -393,7 +448,7 @@ export const CATALOG: Product[] = [
     nombre: 'Pinche Elevador de Rollos',
     tags: ['Doble cilindro', 'Tubo 100×100 mm'],
     descripcion: 'Construido en tubo 100×100 mm x 6,35 de espesor. Doble cilindro hidráulico.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/p/i/pinche-elevador-de-rollos-Implementos-Quico-agrofy-0-20210913141607.JPG',
+    imagen: undefined,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Armstrong, Santa Fe',
@@ -406,7 +461,7 @@ export const CATALOG: Product[] = [
     nombre: 'Grúa Fija',
     tags: ['Alta resistencia', 'Carga de rollos'],
     descripcion: 'Grúa fija de alta resistencia para elevación y traslado de cargas en el campo. Estructura en acero. Ideal para carga de rollos y maquinaria.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/g/r/gruas-fassi-IJM-R-S-agrofy-0-20260127154120.png',
+    imagen: sylGruaFija,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Armstrong, Santa Fe',
@@ -419,7 +474,7 @@ export const CATALOG: Product[] = [
     nombre: 'Grúa de Arrastre',
     tags: ['Giro hidráulico 120°', 'Brazo telescópico', 'Tres palancas'],
     descripcion: 'Construida en chapa plegable. Giro hidráulico de 120°. Enganche trasero. Brazo telescópico hidráulico. Comando de tres palancas.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/g/r/gruas-hidraulica-multiproposit-Quebrada-Verde-agrofy-1-20200311200617.jpg',
+    imagen: sylGruaArrastre,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Armstrong, Santa Fe',
@@ -434,7 +489,7 @@ export const CATALOG: Product[] = [
     nombre: 'Tanque para Combustible',
     tags: ['2.000–6.000 lts', 'Fibra', 'Campo'],
     descripcion: 'Disponible en modelos de 2.000 a 6.000 litros. Tanque de fibra, cajones laterales, baulera trasera y rompeolas interno. Ideal para abastecer maquinaria agrícola en campo.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/t/a/tanque-belen-3000-lts-completo-Prarizzi_Maquinarias-agrofy-1-20230707150233.jpg',
+    imagen: belenTanqueComb,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -447,7 +502,7 @@ export const CATALOG: Product[] = [
     nombre: 'Tolva con Arco',
     tags: ['Alta capacidad', 'Carga superior', 'Descarga rápida'],
     descripcion: 'Tolva con arco de gran capacidad para almacenaje y transporte de granos. Fácil carga por la parte superior y descarga rápida. Construida en chapa gruesa.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/a/c/acoplado-tolva-belen-8-tn-2-ej-Prarizzi_Maquinarias-agrofy-0-20160826122812.png',
+    imagen: belenTolvaArco,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -460,7 +515,7 @@ export const CATALOG: Product[] = [
     nombre: 'Acoplado Semilla y Fertilizante 22 TT',
     tags: ['22 TT', 'Tolva compartimentada', 'Descarga eficiente'],
     descripcion: 'Para transporte y distribución de semillas y fertilizantes. Capacidad de 22 toneladas. Estructura robusta con tolva compartimentada y sistema de descarga eficiente.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/a/c/acoplado-tolva-belen-20-tn-2-e-Prarizzi_Maquinarias-agrofy-0-20160826122929.png',
+    imagen: belenSF22tt,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -473,7 +528,7 @@ export const CATALOG: Product[] = [
     nombre: 'Acoplado Semilla y Fertilizante 8/10/14',
     tags: ['8–14 TN', 'Tolva dividida', 'Tornillo sin fin'],
     descripcion: 'Capacidad de 8 a 14 toneladas. Tolva dividida para semilla y fertilizante. Sistema de descarga por tornillo sin fin.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/s/e/semillas-y-fertilizantes-belen-Prarizzi_Maquinarias-agrofy-0-20160825173039.png',
+    imagen: belenSF814,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -486,7 +541,7 @@ export const CATALOG: Product[] = [
     nombre: 'Full Trailer 14 y 22 TT',
     tags: ['14 TT', '22 TT', 'Larga distancia'],
     descripcion: 'Full trailer de alta capacidad en versiones de 14 y 22 toneladas. Ideal para transporte de granos en largas distancias. Chasis reforzado.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/a/c/acoplado-tanque-belen-5000-lts-Prarizzi_Maquinarias-agrofy-0-20160826121802.png',
+    imagen: belenFullTrailer,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -499,7 +554,7 @@ export const CATALOG: Product[] = [
     nombre: 'Chasis para Tanques de Fibra / Plástico',
     tags: ['Agua', 'Fibra de vidrio', 'Anclajes de seguridad'],
     descripcion: 'Chasis especializado para el transporte de tanques de fibra de vidrio o plástico. Estructura reforzada con anclajes de seguridad y suspensión adaptable.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/a/c/acoplado-tanque-belen-de-3000--Prarizzi-Maquinarias-agrofy-2-20211201142657.jpg',
+    imagen: belenChasistanque,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -512,7 +567,7 @@ export const CATALOG: Product[] = [
     nombre: 'Acoplados Playos',
     tags: ['Varias toneladas', 'Plataforma plana', 'Versátil'],
     descripcion: 'Acoplados de plataforma plana en diversas capacidades de carga. Versátiles para el transporte de maquinaria, fardos e insumos rurales en todo tipo de terreno.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/a/c/acoplado-playo-4-tn-Viejo-Tala-agrofy-0-20220211205253.jpg',
+    imagen: belenPlayos,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -525,7 +580,7 @@ export const CATALOG: Product[] = [
     nombre: 'Carretón con Rampa',
     tags: ['Rampa abatible', 'Maquinaria pesada', 'Alta resistencia'],
     descripcion: 'Carretón con rampa abatible para carga y descarga de tractores, cosechadoras y equipos agrícolas pesados. Estructura de alta resistencia con rampa hidráulica o mecánica.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/c/a/carret-n-balanc-n-con-rampa-be-Prarizzi_Maquinarias-agrofy-1-20180128130811.jpg',
+    imagen: belenCarreton,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -538,7 +593,7 @@ export const CATALOG: Product[] = [
     nombre: 'Acoplado Vaquero',
     tags: ['Hacienda', 'Piso antideslizante', 'Acceso fácil'],
     descripcion: 'Acoplado tipo vaquero para transporte de hacienda. Piso antideslizante, laterales y techo robustos, con acceso fácil para el ganado.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/a/c/acoplado-vaquero-sorazabal-agrofy-0-20260308211222.jpg',
+    imagen: belenVaquero,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -551,7 +606,7 @@ export const CATALOG: Product[] = [
     nombre: 'Acoplado Especial',
     tags: ['Diseño especial', 'Múltiples usos', 'Personalizable'],
     descripcion: 'Acoplado de diseño especial adaptable a múltiples usos rurales. Estructura reforzada y configuración personalizable según las necesidades del campo.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/a/c/acoplado-volcador-hidraulico-t-Prarizzi_Maquinarias-agrofy-2-20191008133043.jpg',
+    imagen: belenEspecial,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -564,7 +619,7 @@ export const CATALOG: Product[] = [
     nombre: 'Carro Hidráulico Volcador',
     tags: ['Volcador trasero', 'Bilateral', 'Manual'],
     descripcion: 'Carro hidráulico volcador trasero y basculante para descarga eficiente de granos y materiales a granel. Sistema hidráulico de elevación de alta fiabilidad.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/a/c/acoplado-volcador-hidraulico-t-Prarizzi_Maquinarias-agrofy-2-20191008133043.jpg',
+    imagen: belenVolcador,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -579,7 +634,7 @@ export const CATALOG: Product[] = [
     nombre: 'Carro Taller',
     tags: ['Taller de campo', 'Cajones', 'Generador'],
     descripcion: 'Carro taller equipado para mantenimiento y reparaciones en campo. Cajones, tornillo de banco, generador y herramientas organizadas.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/300x300/A/c/Acoplado-Taller-SYL-4-Mts-de-Largo-agrofy-0-20250807171415.webp',
+    imagen: belenCarroTaller,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -592,7 +647,7 @@ export const CATALOG: Product[] = [
     nombre: 'Pala Hidráulica',
     tags: ['Frontal', 'Movimiento de tierra', 'Compatible tractores'],
     descripcion: 'Pala hidráulica frontal para movimiento de tierra, granos y materiales. Compatible con tractores de distintas potencias. Fácil instalación y operación.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/p/a/palas-hidraulicas-omar-martin--Omar-Mart-n--agrofy-0-20231122142435.png',
+    imagen: belenPala,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
@@ -605,24 +660,308 @@ export const CATALOG: Product[] = [
     nombre: 'Tanque Aéreo',
     tags: ['Combustible', 'Agua', 'Anticorrosivo'],
     descripcion: 'Tanque aéreo para almacenamiento de combustible o agua en el campo. Fabricado en acero con tratamiento anticorrosivo. Con válvula y medidor de nivel.',
-    imagen: 'https://argentina.agrofystatic.com/media/catalog/product/cache/850x600/t/a/tanque-belen-3000-lts-completo-Prarizzi_Maquinarias-agrofy-1-20230707150233.jpg',
+    imagen: belenTanqueAereo,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
   },
 
-  // ── IMPLEMENTOS PAMPERO ───────────────────────────────────────────────
+  // ── RASTRAS PAMPERO ───────────────────────────────────────────────────
   {
-    id: 'pampero-rastra',
+    id: 'pampero-lh4alas',
     estado: 'nuevo',
-    categoria: 'implemento',
+    categoria: 'rastra',
     marca: 'Pampero',
-    nombre: 'Rastras',
-    tags: ['Varias líneas', 'Consultar modelos'],
-    descripcion: 'Línea completa de rastras Pampero. Herramienta de labranza de alta confiabilidad. Consultá disponibilidad.',
+    nombre: 'LH 4 Alas',
+    tags: ['Doble acción', '4 alas rebatibles', '75 kg/disco'],
+    descripcion: 'Rastra de discos doble acción descentrada. Chasis tubular 170×120 mm. Cuatro alas rebatibles. Peso por disco 75 kg.',
+    imagen: pamperoLH4Alas,
     peso: 'Consultar',
     cabina: '—',
     origen: 'Argentina',
+  },
+  {
+    id: 'pampero-lh4alas-e',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'LH 4 Alas Especial',
+    tags: ['Doble acción', '4 alas', 'Transp. 3.90 m'],
+    descripcion: 'Rastra de discos doble acción descentrada. Chasis tubular 170×120 mm. Ancho de transporte 3,90 m.',
+    imagen: pamperoLH4AlasE,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-lh5280',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'LH 5280',
+    tags: ['Alta capacidad', 'Doble eje balancín', '85 kg/disco'],
+    descripcion: 'Rastra de alta capacidad. Doble eje balancín. Levante con 4 cilindros hidráulicos. Peso por disco 85 kg.',
+    imagen: pamperoLH5280,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-r2',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'R II',
+    tags: ['Doble acción', 'Eje vertebrado', '60 kg/disco'],
+    descripcion: 'Rastra doble acción descentrada. Chasis 160×115 mm. Doble eje vertebrado. Peso por disco 60 kg.',
+    imagen: pamperoRII,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-r2a',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'R II A',
+    tags: ['Alas rebatibles', '60 kg/disco', 'Transp. 3.90 m'],
+    descripcion: 'Rastra de discos con alas rebatibles hidráulicamente. Peso por disco 60 kg. Ancho de transporte 3,90 m.',
+    imagen: pamperoRIIA,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-r2e',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'R II E',
+    tags: ['Reforzada', 'Rodamiento doble', '95 kg/disco'],
+    descripcion: 'Rastra reforzada. Mazas reforzadas. Rodamiento doble 30212-6212. Peso por disco 95 kg.',
+    imagen: pamperoRIIE,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-r3',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'R III',
+    tags: ['Pesada', 'Doble acción', '75 kg/disco'],
+    descripcion: 'Rastra pesada doble acción. Chasis 170×120 mm. Doble eje vertebrado. Peso por disco 75 kg.',
+    imagen: pamperoRIII,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-r3e',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'R III E',
+    tags: ['Pesada reforzada', 'Rodamiento doble', '110 kg/disco'],
+    descripcion: 'Rastra pesada reforzada. Chasis 170×120 mm. Rodamiento doble 30212-6212. Peso por disco 110 kg.',
+    imagen: pamperoRIIIE,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+
+  // ── RASTRAS TIRO EXCÉNTRICO PAMPERO ──────────────────────────────────
+  {
+    id: 'pampero-rte1828',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'RTE 18/28',
+    tags: ['Tiro excéntrico', '95 kg/disco', 'Discos 24"–26"'],
+    descripcion: 'Rastra tiro excéntrico. Tubo estructural 140×80 mm. Discos 24" o 26" a 230/250 mm. Rodamiento doble cónico 30212. Levante hidráulico opcional.',
+    imagen: pamperoRTE1828,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-rte3240',
+    estado: 'nuevo',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'RTE 32/40',
+    tags: ['Tiro excéntrico', 'Alta capacidad', 'Discos 24"–26"'],
+    descripcion: 'Rastra tiro excéntrico de mayor ancho. Tubo estructural 140×80 mm. Discos 24" o 26" a 230/250 mm. Rodamiento doble cónico 30212. Levante hidráulico opcional.',
+    imagen: pamperoRTE3240,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+
+  // ── ROLOS TRITURADORES PAMPERO ────────────────────────────────────────
+  {
+    id: 'pampero-gm4500',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Rolo Triturador GM 4500',
+    tags: ['Rolo triturador', 'Levante hidráulico', 'Discos 650 mm'],
+    descripcion: 'Chasis tubular 140×100×8 mm. Levante hidráulico doble cilindro. Rodillos de 650 mm de diámetro en chapa 6,35 mm con cuchillas de acero al boro tratadas térmicamente.',
+    imagen: pamperoGM4500,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-gm7500',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Rolo Triturador GM 7500',
+    tags: ['Rolo triturador', 'Alas plegables', 'Gran ancho'],
+    descripcion: 'Igual al GM 4500 con alas plegables hidráulicas para mayor ancho de labor. Chasis tubular, levante hidráulico doble cilindro, rodillos 650 mm con cuchillas de acero al boro.',
+    imagen: pamperoGM7500,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+
+  // ── DESCOMPACTADORES PAMPERO ──────────────────────────────────────────
+  {
+    id: 'pampero-descomp',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Descompactador de Suelo CX / CM',
+    tags: ['Modelo CX', 'Modelo CM', 'Levante hidráulico'],
+    descripcion: 'Chasis en tubo estructural 100×100 mm. Ancho de transporte 3 a 4,20 m. Levante con doble cilindro hidráulico. CX: reja 100–150 mm. CM: reja tipo manicera 350 mm. 20 HP por reja.',
+    imagen: pamperoDescomp,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+
+  // ── PULVERIZADORES PAMPERO ────────────────────────────────────────────
+  {
+    id: 'pampero-delta',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Pulverizador Delta',
+    tags: ['Bomba UDOR Z85', '84 l/pm', '3 secciones'],
+    descripcion: 'Chasis en tubos estructurales 120×60 mm. Bomba italiana UDOR Z85, 84 l/pm a 540 RPM, 20 bar. Mando Master Flow con retorno proporcional en 3 secciones. Apto para fertilizante líquido.',
+    imagen: pamperoDelta,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-stsstc',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Pulverizador STS / STC',
+    tags: ['Bomba UDOR Z85', '84 l/pm', 'Pintura poliuretano'],
+    descripcion: 'Chasis en tubos estructurales. Bomba italiana UDOR Z85, 84 l/pm a 540 RPM, 20 bar. Revestimiento epoxi + poliuretano resistente a agroquímicos. Apto para fertilizante líquido.',
+    imagen: pamperoSTC,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+  {
+    id: 'pampero-tetrafull',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Pulverizador Tetra Full',
+    tags: ['Bomba UDOR RO140', '140 l/pm', 'Alta caudal'],
+    descripcion: 'Chasis en tubos estructurales. Bomba italiana UDOR RO140, 140 l/pm a 540 RPM. Mayor caudal para grandes superficies. Revestimiento epoxi + poliuretano resistente a agroquímicos.',
+    imagen: pamperoTetra,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Argentina',
+  },
+
+  // ── MIXERS PAMPERO ────────────────────────────────────────────────────
+  {
+    id: 'pampero-mixer4004',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Mixer 4004',
+    tags: ['4 m³', 'Descarga lateral', 'PTO'],
+    descripcion: 'Mezclador horizontal. Chasis chapa 3/16, tolva chapa 1/8. Tres sinfines de mezcla. Descarga lateral hidráulica. Toma de fuerza con barra cardan. Eje 750×16.',
+    imagen: pamperoMixer4,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Armstrong, Santa Fe',
+  },
+  {
+    id: 'pampero-mixer4007',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Mixer 4007',
+    tags: ['7 m³', 'Descarga lateral', 'PTO'],
+    descripcion: 'Mezclador horizontal de mayor capacidad. Chasis chapa 3/16, tolva chapa 1/8. Tres sinfines de mezcla. Descarga lateral hidráulica. Toma de fuerza con barra cardan.',
+    imagen: pamperoMixer7,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Armstrong, Santa Fe',
+  },
+  {
+    id: 'pampero-mixer4010',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Mixer 4010',
+    tags: ['10 m³', 'Descarga lateral', 'PTO'],
+    descripcion: 'Mezclador horizontal 10 m³. Chasis chapa 3/16, tolva chapa 1/8. Tres sinfines de mezcla. Descarga lateral hidráulica con motor orbital. Toma de fuerza con barra cardan.',
+    imagen: pamperoMixer10,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Armstrong, Santa Fe',
+  },
+  {
+    id: 'pampero-mixer4013',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Mixer 4013',
+    tags: ['13 m³', 'Descarga lateral', 'PTO'],
+    descripcion: 'Mezclador horizontal 13 m³. Chasis chapa 3/16, tolva chapa 1/8. Tres sinfines de mezcla. Descarga lateral hidráulica con motor orbital. Toma de fuerza con barra cardan.',
+    imagen: pamperoMixer13,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Armstrong, Santa Fe',
+  },
+  {
+    id: 'pampero-mixer4017',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Mixer 4017',
+    tags: ['17 m³', 'Descarga lateral', 'PTO'],
+    descripcion: 'Mezclador horizontal 17 m³, mayor de la línea horizontal. Chasis chapa 3/16, tolva chapa 1/8. Tres sinfines de mezcla. Descarga lateral hidráulica. Toma de fuerza con barra cardan.',
+    imagen: pamperoMixer17,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Armstrong, Santa Fe',
+  },
+  {
+    id: 'pampero-mixer4014v',
+    estado: 'nuevo',
+    categoria: 'implemento',
+    marca: 'Pampero',
+    nombre: 'Mixer Vertical 4014',
+    tags: ['14 m³', 'Vertical', 'Cinta frontal'],
+    descripcion: 'Mezclador vertical 14 m³. Doble chasis en chapa 1/4. Sinfín vertical con cuchilla de acero al boro, relación 16:1. Descarga por cinta frontal con cadena. Eje 550/45×22.5.',
+    imagen: pamperoMixer14v,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Armstrong, Santa Fe',
   },
 ];
 
@@ -630,6 +969,7 @@ export const CATEGORY_LABELS: Record<Product['categoria'], string> = {
   'tractor-pauny': 'Tractores Pauny',
   'tractor-gravo': 'Tractores Gravo',
   'sembradora': 'Sembradoras',
+  'rastra': 'Rastras',
   'acoplado': 'Acoplados',
   'implemento': 'Implementos',
   'vial': 'Equipos Viales',

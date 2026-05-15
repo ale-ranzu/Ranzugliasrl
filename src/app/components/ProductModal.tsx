@@ -90,29 +90,31 @@ export function ProductModal({
           <div className="grid md:grid-cols-[1.2fr,1fr]">
             {/* Image */}
             <div
-              className={`${getBrandColor(product.marca)} flex items-center justify-center min-h-[250px] relative`}
+              className={`${getBrandColor(product.marca)} flex flex-col min-h-[250px]`}
             >
-              {/* Title over image */}
-              <div className="absolute top-6 left-6 z-20">
-                <div className="text-sm font-bold tracking-[0.2em] uppercase text-black mb-2">
+              <div className="flex-1 flex items-center justify-center p-4">
+                {product.imagen ? (
+                  <img
+                    src={product.imagen}
+                    alt={product.nombre}
+                    className="w-full h-full max-h-80 object-contain"
+                  />
+                ) : (
+                  <span className="font-black text-5xl text-white">
+                    {product.marca}
+                  </span>
+                )}
+              </div>
+
+              {/* Title below image */}
+              <div className="px-6 pb-6">
+                <div className="text-xs font-bold tracking-[0.2em] uppercase text-black/60 mb-1">
                   {product.marca}
                 </div>
-                <h2 className="text-5xl md:text-6xl text-zinc-950 leading-none font-[Anton] font-normal">
+                <h2 className="text-2xl md:text-3xl text-zinc-950 leading-tight font-[Anton] font-normal">
                   {product.nombre}
                 </h2>
               </div>
-
-              {product.imagen ? (
-                <img
-                  src={product.imagen}
-                  alt={product.nombre}
-                  className="w-full h-full max-h-95 object-contain"
-                />
-              ) : (
-                <span className="font-black text-5xl text-white">
-                  {product.marca}
-                </span>
-              )}
             </div>
 
             {/* Content */}

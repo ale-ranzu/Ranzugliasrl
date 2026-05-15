@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { MessageCircle, Plus, Check } from "lucide-react";
+import { MessageCircle, Plus, Check, ImageOff } from "lucide-react";
 import { Product } from "../data/catalog";
 
 interface ProductCardProps {
@@ -57,9 +57,10 @@ export function ProductCard({
                 className="w-full h-auto"
               />
             ) : (
-              <span className="font-normal text-2xl text-white">
-                {product.marca}
-              </span>
+              <div className="flex flex-col items-center gap-2 text-zinc-400">
+                <ImageOff className="w-10 h-10" />
+                <span className="text-xs font-semibold tracking-wider uppercase">Sin imagen</span>
+              </div>
             )}
           </div>
 
@@ -145,7 +146,7 @@ export function ProductCard({
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ delay: Math.min(index * 0.05, 0.3) }}
       onClick={onViewDetails}
-      className="group bg-white rounded-lg overflow-hidden transition-all cursor-pointer hover:shadow-xl hover:-translate-y-1"
+      className="group bg-white rounded-lg overflow-hidden transition-all cursor-pointer hover:shadow-xl hover:-translate-y-1 flex flex-col"
     >
       {/* Badge */}
       <div className="absolute top-3 left-3 z-10">
@@ -162,7 +163,7 @@ export function ProductCard({
 
       {/* Image */}
       <div
-        className={`${getBrandColor(product.marca)} aspect-[4/3] flex items-center justify-center p-4 relative`}
+        className={`${getBrandColor(product.marca)} h-48 flex-shrink-0 flex items-center justify-center p-4 relative`}
       >
         {product.imagen ? (
           <img
@@ -171,14 +172,15 @@ export function ProductCard({
             className="w-full h-full object-contain"
           />
         ) : (
-          <span className="font-normal text-3xl text-white">
-            {product.marca}
-          </span>
+          <div className="flex flex-col items-center gap-2 text-zinc-400">
+            <ImageOff className="w-12 h-12" />
+            <span className="text-xs font-semibold tracking-wider uppercase">Sin imagen</span>
+          </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className="p-5 flex-1 flex flex-col">
         <div className="text-sm font-bold tracking-wider uppercase text-zinc-400 mb-1">
           {product.marca}
         </div>
@@ -200,7 +202,7 @@ export function ProductCard({
         </p>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-3">
+        <div className="flex items-center justify-between pt-3 mt-auto">
           <button className="text-xs font-semibold tracking-wider uppercase text-zinc-950 hover:text-yellow-400 transition-colors flex items-center gap-1 cursor-pointer">
             Ver ficha →
           </button>
