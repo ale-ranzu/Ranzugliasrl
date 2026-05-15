@@ -28,7 +28,7 @@ export default async function handler(req, res) {
   try {
     await resend.emails.send({
       from: "Ranzuglia SRL <onboarding@resend.dev>",
-      to: "aleranzu@gmail.com",
+      to: ["aleranzu@gmail.com", "ranzugliasrl@gmail.com"],
       subject: `Nueva consulta de ${nombre} — Ranzuglia SRL`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">

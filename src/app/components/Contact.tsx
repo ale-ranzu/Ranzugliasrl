@@ -78,8 +78,8 @@ export function Contact() {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "info@ranzugliasrl.com.ar",
-      link: "mailto:info@ranzugliasrl.com.ar",
+      value: "ranzugliasrl@gmail.com",
+      link: "mailto:ranzugliasrl@gmail.com",
     },
     {
       icon: <Instagram className="w-5 h-5" />,

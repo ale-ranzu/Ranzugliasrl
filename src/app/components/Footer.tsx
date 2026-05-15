@@ -131,11 +131,11 @@ export function Footer() {
                 2923 43 1570
               </a>
               <a
-                href="mailto:info@ranzugliasrl.com.ar"
+                href="mailto:ranzugliasrl@gmail.com"
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-yellow-400 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                info@ranzugliasrl.com.ar
+                ranzugliasrl@gmail.com
               </a>
               <div className="flex items-center gap-2 text-sm text-white/60">
                 <MapPin className="w-4 h-4" />
