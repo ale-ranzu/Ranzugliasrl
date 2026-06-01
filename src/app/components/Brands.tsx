@@ -8,6 +8,7 @@ import fametLogo from "../../imports/marcas/famet.jpg";
 import tecnocarLogo from "../../imports/marcas/tecnocar.png";
 import distrimaqLogo from "../../imports/marcas/distrimaq.webp";
 import ytoLogo from "../../imports/marcas/yto.png";
+import sylLogo from "../../imports/marcas/syl.jpg";
 
 interface Brand {
   name: string;
@@ -22,10 +23,10 @@ const brands: Brand[] = [
   { name: "Gherardi",  image: gherardiLogo,  href: "https://www.gherardi.com.ar" },
   { name: "Bertini",   image: bertiniLogo,   href: "https://www.bertini.com.ar" },
   { name: "Pampero",   image: pamperoLogo,   href: "https://mpampero.com.ar" },
-  { name: "Belén",     image: belenLogo },
-  { name: "Dems",      image: demsLogo },
-  { name: "Famet",     image: fametLogo },
-  { name: "SYL",       text: true },
+  { name: "Belén",     image: belenLogo, href:"https://acopladosbelensa.com.ar/" },
+  { name: "Dems",      image: demsLogo, href: "https://www.instagram.com/agropartesdems/" },
+  { name: "Famet",     image: fametLogo, href: "https://www.famet.com.ar/" },
+  { name: "SYL",       image: sylLogo, href: "https://www.instagram.com/syl.implementos/?hl=es" },
   { name: "Tecnocar",  image: tecnocarLogo,  href: "https://tecnocar.com.ar" },
   { name: "Distrimaq", image: distrimaqLogo, href: "https://distrimaqweb.com.ar" },
   { name: "YTO",       image: ytoLogo,       href: "https://ytocorp.com" },

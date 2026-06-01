@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import { CreditCard, Calculator } from "lucide-react";
 import logoNacion from "../../imports/bancos/Banco_Naci_n.svg?url";
@@ -11,57 +11,53 @@ import logoPauny from "../../imports/pauny/pauny_logo_negativo.svg?url";
 
 const financingOptions = [
   {
-    
     desc: "Plan oficial de financiamiento del fabricante. Condiciones preferenciales para tractores nuevos de la línea Pauny.",
     featured: true,
     logo: logoPauny,
+    href: "https://www.pauny.com.ar/ar/plan_rino/",
   },
   {
     desc: "Créditos para el agro del BNA. Tasas bonificadas para productores agropecuarios.",
     logo: logoNacion,
+    href: "https://www.bna.com.ar/Empresas/AgroNegocios/Creditos",
   },
   {
     desc: "Línea de crédito para maquinaria agrícola. Financiamiento a medida del productor bonaerense.",
     logo: logoProvincia,
+    href: "https://www.bancoprovincia.com.ar/agro/agro_capitaltrabajo",
   },
   {
     desc: "Créditos prendarios y líneas agro. Cuotas fijas en pesos o dólares.",
     logo: logoMacro,
+    href: "https://www.macro.com.ar/agro/financiaciones/credito-al-instante",
   },
   {
     desc: "Línea de crédito para maquinaria y equipamiento agrícola.",
     logo: logoGalicia,
+    href: "https://www.galicia.ar/empresas/financiaciones/compra-insumos-agro",
   },
   {
     desc: "Financiamiento regional para productores del sudoeste bonaerense. Cercanía y conocimiento del campo.",
     logo: logoPampa,
+    href: "https://www.bancodelapampa.com.ar/agro",
   },
   {
     desc: "Banco de Inversión y Comercio Exterior. Líneas especiales para inversión en maquinaria.",
     logo: logoBice,
+    href: "https://www.bice.com.ar/productos/inversion/creditosagro2026/",
   },
 ];
 
 export function Financing() {
-  const calculatorRef = useRef<HTMLDivElement>(null);
-  const [amount, setAmount] = useState(10000000);
-  const [months, setMonths] = useState(24);
-  const [rate, setRate] = useState(5);
+  const [amount, setAmount] = useState(50000000);
+  const [months, setMonths] = useState(36);
+  const [rate, setRate] = useState(30);
 
   const monthlyPayment =
     (amount * (rate / 100 / 12)) /
     (1 - Math.pow(1 + rate / 100 / 12, -months));
   const totalAmount = monthlyPayment * months;
   const totalInterest = totalAmount - amount;
-
-  const scrollToCalculator = () => {
-    if (calculatorRef.current) {
-      calculatorRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
 
   return (
     <section
@@ -102,25 +98,23 @@ export function Financing() {
               `}
             >
               <div className="mb-4 h-8 flex items-center">
-                {option.logo ? (
-                  <img
-                    src={option.logo}
-                    alt=""
-                    className="h-full w-auto object-contain"
-                  />
-                ) : (
-                  <div className="text-yellow-400">{option.icon}</div>
-                )}
+                <img
+                  src={option.logo}
+                  alt=""
+                  className="h-full w-auto object-contain"
+                />
               </div>
               <p className="text-white/60 leading-relaxed mb-4 text-[16px]">
                 {option.desc}
               </p>
-              <button
-                onClick={scrollToCalculator}
-                className="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition-colors cursor-pointer"
+              <a
+                href={option.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition-colors"
               >
                 Más información →
-              </button>
+              </a>
             </motion.div>
           ))}
 
@@ -152,12 +146,11 @@ export function Financing() {
 
         {/* Calculator */}
         <div
-          ref={calculatorRef}
-          className="bg-zinc-950 border border-yellow-400/30 rounded-xl p-8 max-w-4xl mx-auto scroll-mt-24"
+          className="bg-zinc-950 border border-yellow-400/30 rounded-xl p-8 max-w-4xl mx-auto"
         >
           <div className="flex items-center justify-between mb-6">
             <h3 className="font-normal text-2xl text-white">
-              Calculadora de Cuotas
+              Calculadora estimada de Cuotas
             </h3>
             <Calculator className="w-6 h-6 text-yellow-400" />
           </div>
@@ -171,9 +164,9 @@ export function Financing() {
                 </label>
                 <input
                   type="range"
-                  min="1000000"
-                  max="50000000"
-                  step="500000"
+                  min="5000000"
+                  max="500000000"
+                  step="5000000"
                   value={amount}
                   onChange={(e) => setAmount(Number(e.target.value))}
                   className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-yellow-400"
@@ -190,7 +183,7 @@ export function Financing() {
                 <input
                   type="range"
                   min="6"
-                  max="60"
+                  max="84"
                   step="6"
                   value={months}
                   onChange={(e) => setMonths(Number(e.target.value))}
@@ -207,9 +200,9 @@ export function Financing() {
                 </label>
                 <input
                   type="range"
-                  min="0"
-                  max="15"
-                  step="0.5"
+                  min="5"
+                  max="80"
+                  step="1"
                   value={rate}
                   onChange={(e) => setRate(Number(e.target.value))}
                   className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-yellow-400"
@@ -248,7 +241,7 @@ export function Financing() {
                   </div>
                 </div>
               </div>
-              <p className="text-xs text-white/40 text-center pt-4 border-t border-white/10">
+              <p className="text-sm text-white/60 text-center pt-4 border-t border-white/10">
                 * Valores estimados. Consultá condiciones reales con un
                 asesor.
               </p>
