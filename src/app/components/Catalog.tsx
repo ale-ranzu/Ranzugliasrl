@@ -13,6 +13,7 @@ import { CATALOG, CATEGORY_LABELS, Product } from "../data/catalog";
 import { ProductCard } from "./ProductCard";
 import { ProductModal } from "./ProductModal";
 import { CompareDrawer } from "./CompareDrawer";
+import { Tooltip } from "./Tooltip";
 import sinResultados from "../../imports/no-se-encuentra.svg?url";
 
 interface CatalogProps {
@@ -183,28 +184,32 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
 
             {/* View Mode Toggle */}
             <div className="gap-2 bg-white border border-zinc-300 rounded-lg p-1 hidden md:flex">
-              <button
-                onClick={() => setViewMode("grid")}
-                className={`p-2 rounded transition-colors cursor-pointer ${
-                  viewMode === "grid"
-                    ? "bg-zinc-950 text-white"
-                    : "text-zinc-400 hover:text-zinc-950"
-                }`}
-                aria-label="Vista en cuadrícula"
-              >
-                <Grid3x3 className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => setViewMode("list")}
-                className={`p-2 rounded transition-colors cursor-pointer ${
-                  viewMode === "list"
-                    ? "bg-zinc-950 text-white"
-                    : "text-zinc-400 hover:text-zinc-950"
-                }`}
-                aria-label="Vista en lista"
-              >
-                <List className="w-5 h-5" />
-              </button>
+              <Tooltip text="Vista en cuadrícula" position="bottom">
+                <button
+                  onClick={() => setViewMode("grid")}
+                  className={`p-2 rounded transition-colors cursor-pointer ${
+                    viewMode === "grid"
+                      ? "bg-zinc-950 text-white"
+                      : "text-zinc-400 hover:text-zinc-950"
+                  }`}
+                  aria-label="Vista en cuadrícula"
+                >
+                  <Grid3x3 className="w-5 h-5" />
+                </button>
+              </Tooltip>
+              <Tooltip text="Vista en lista" position="bottom">
+                <button
+                  onClick={() => setViewMode("list")}
+                  className={`p-2 rounded transition-colors cursor-pointer ${
+                    viewMode === "list"
+                      ? "bg-zinc-950 text-white"
+                      : "text-zinc-400 hover:text-zinc-950"
+                  }`}
+                  aria-label="Vista en lista"
+                >
+                  <List className="w-5 h-5" />
+                </button>
+              </Tooltip>
             </div>
           </div>
         </div>

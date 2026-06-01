@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { toast } from "sonner";
 import {
@@ -9,6 +9,7 @@ import {
   Instagram,
   Clock,
 } from "lucide-react";
+import { CATALOG } from "../data/catalog";
 
 export function Contact() {
   const [formState, setFormState] = useState({
@@ -17,27 +18,74 @@ export function Contact() {
     email: "",
     localidad: "",
     tipo: "",
+    modelo: "",
     mensaje: "",
     financiamiento: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const buildWhatsAppText = () => {
+    const tipoLabels: Record<string, string> = {
+      "tractor-pauny": "Tractores Pauny",
+      "tractor-gravo": "Tractores Gravo",
+      "tractor-yto": "Tractores YTO",
+      sembradora: "Sembradoras",
+      rastra: "Rastras",
+      acoplado: "Acoplados",
+      implemento: "Implementos",
+      usado: "Maquinaria usada",
+      repuesto: "Repuestos",
+      otro: "Otro",
+    };
+    const lines = [
+      `*Nueva consulta desde el sitio web*`,
+      ``,
+      `*Nombre:* ${formState.nombre}`,
+      `*Teléfono:* ${formState.tel}`,
+      formState.email ? `*Email:* ${formState.email}` : null,
+      formState.localidad ? `*Localidad:* ${formState.localidad}` : null,
+      formState.tipo ? `*Categoría:* ${tipoLabels[formState.tipo] ?? formState.tipo}` : null,
+      formState.modelo ? `*Modelo:* ${formState.modelo}` : null,
+      formState.mensaje ? `*Mensaje:* ${formState.mensaje}` : null,
+      formState.financiamiento ? `*Solicita info de financiamiento*` : null,
+    ].filter(Boolean);
+    return encodeURIComponent(lines.join("\n"));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          to: "ranzugliasrl@gmail.com",
+          subject: `Consulta de ${formState.nombre} — ${formState.tipo || "sin categoría"}`,
+          from_name: "Ranzuglia SRL Web",
+          nombre: formState.nombre,
+          telefono: formState.tel,
+          email: formState.email || "—",
+          localidad: formState.localidad || "—",
+          categoria: formState.tipo || "—",
+          modelo: formState.modelo || "—",
+          mensaje: formState.mensaje || "—",
+          financiamiento: formState.financiamiento ? "Sí" : "No",
+        }),
       });
 
       if (!res.ok) throw new Error("Error al enviar");
 
       setIsSuccess(true);
       toast.success("¡Consulta enviada con éxito!");
+
+      window.open(
+        `https://wa.me/5492923431570?text=${buildWhatsAppText()}`,
+        "_blank"
+      );
     } catch {
       toast.error("No se pudo enviar. Intentá de nuevo o escribinos por WhatsApp.");
     } finally {
@@ -52,28 +100,50 @@ export function Contact() {
         email: "",
         localidad: "",
         tipo: "",
+        modelo: "",
         mensaje: "",
         financiamiento: false,
       });
-    }, 3000);
+    }, 5000);
   };
+
+  const CATALOG_CATEGORIES = ['tractor-pauny', 'tractor-gravo', 'tractor-yto', 'sembradora', 'rastra', 'acoplado', 'implemento'];
+
+  const modeloOptions = useMemo(() => {
+    if (!CATALOG_CATEGORIES.includes(formState.tipo)) return [];
+    return CATALOG
+      .filter(p => p.categoria === formState.tipo && p.estado === 'nuevo')
+      .map(p => p.nombre);
+  }, [formState.tipo]);
 
   const contactInfo = [
     {
       icon: <Phone className="w-5 h-5" />,
-      label: "WhatsApp",
+      label: "Ventas",
       value: "2923 43 1570",
       link: "https://wa.me/5492923431570",
     },
     {
+      icon: <Phone className="w-5 h-5" />,
+      label: "Repuestos",
+      value: "2923 51 5685",
+      link: "https://wa.me/5492923515685",
+    },
+   
+    {
       icon: <MapPin className="w-5 h-5" />,
-      label: "Dirección",
-      value: "Repuestos: Av. 25 de Mayo 1541 · Coronel Pringles · Buenos Aires",
+      label: "Ventas",
+      value: "Ruta 51 km 616 · Coronel Pringles · Buenos Aires",
+    },
+     {
+      icon: <MapPin className="w-5 h-5" />,
+      label: "Repuestos",
+      value: "Av. 25 de Mayo 1541 · Coronel Pringles · Buenos Aires",
     },
     {
       icon: <Clock className="w-5 h-5" />,
       label: "Horario",
-      value: "Lun–Vie 8 a 12h / 15:30 a 19:30h · Sáb 8 a 12h",
+      value: "Lun–Vie 8 a 12h / 14:30 a 19:30h · Sáb 8 a 12h",
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -118,7 +188,7 @@ export function Contact() {
             <div className="space-y-0">
               {contactInfo.map((info, index) => (
                 <motion.div
-                  key={info.label}
+                  key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -241,6 +311,7 @@ export function Contact() {
                           setFormState({
                             ...formState,
                             tipo: e.target.value,
+                            modelo: "",
                           })
                         }
                         className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 font-medium"
@@ -248,67 +319,122 @@ export function Contact() {
                           appearance: "none",
                           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
                           backgroundRepeat: "no-repeat",
-                          backgroundPosition:
-                            "right 12px center",
+                          backgroundPosition: "right 12px center",
                           paddingRight: "36px",
                         }}
                       >
-                        <option
-                          value=""
-                          className="text-zinc-400"
-                        >
+                        <option value="" className="text-zinc-400">
                           — Seleccioná una categoría —
                         </option>
-                        <option
-                          value="tractor-pauny"
-                          className="text-zinc-950 font-medium"
-                        >
+                        <option value="tractor-pauny" className="text-zinc-950 font-medium">
                           Tractores Pauny
                         </option>
-                        <option
-                          value="tractor-gravo"
-                          className="text-zinc-950 font-medium"
-                        >
+                        <option value="tractor-gravo" className="text-zinc-950 font-medium">
                           Tractores Gravo
                         </option>
-                        <option
-                          value="sembradora"
-                          className="text-zinc-950 font-medium"
-                        >
+                        <option value="tractor-yto" className="text-zinc-950 font-medium">
+                          Tractores YTO
+                        </option>
+                        <option value="sembradora" className="text-zinc-950 font-medium">
                           Sembradoras
                         </option>
-                        <option
-                          value="acoplado"
-                          className="text-zinc-950 font-medium"
-                        >
+                        <option value="rastra" className="text-zinc-950 font-medium">
+                          Rastras
+                        </option>
+                        <option value="acoplado" className="text-zinc-950 font-medium">
                           Acoplados
                         </option>
-                        <option
-                          value="implemento"
-                          className="text-zinc-950 font-medium"
-                        >
+                        <option value="implemento" className="text-zinc-950 font-medium">
                           Implementos
                         </option>
-                        <option
-                          value="usado"
-                          className="text-zinc-950 font-medium"
-                        >
+                        <option value="usado" className="text-zinc-950 font-medium">
                           Maquinaria usada
                         </option>
-                        <option
-                          value="repuesto"
-                          className="text-zinc-950 font-medium"
-                        >
+                        <option value="repuesto" className="text-zinc-950 font-medium">
                           Repuestos
                         </option>
-                        <option
-                          value="otro"
-                          className="text-zinc-950 font-medium"
-                        >
+                        <option value="otro" className="text-zinc-950 font-medium">
                           Otro / consultar
                         </option>
                       </select>
                     </div>
+
+                    {modeloOptions.length > 0 && (
+                      <div>
+                        <label
+                          htmlFor="modelo"
+                          className="block text-xs font-bold tracking-wider uppercase text-zinc-950 mb-2"
+                        >
+                          Modelo
+                        </label>
+                        <select
+                          id="modelo"
+                          value={formState.modelo}
+                          onChange={(e) =>
+                            setFormState({ ...formState, modelo: e.target.value })
+                          }
+                          className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 font-medium"
+                          style={{
+                            appearance: "none",
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "right 12px center",
+                            paddingRight: "36px",
+                          }}
+                        >
+                          <option value="" className="text-zinc-400">
+                            — Seleccioná un modelo —
+                          </option>
+                          {modeloOptions.map((m) => (
+                            <option key={m} value={m} className="text-zinc-950 font-medium">
+                              {m}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    )}
+
+                    {formState.tipo === "usado" && (
+                      <div>
+                        <label
+                          htmlFor="modelo"
+                          className="block text-xs font-bold tracking-wider uppercase text-zinc-950 mb-2"
+                        >
+                          ¿Qué maquinaria buscás?
+                        </label>
+                        <input
+                          id="modelo"
+                          type="text"
+                          value={formState.modelo}
+                          onChange={(e) =>
+                            setFormState({ ...formState, modelo: e.target.value })
+                          }
+                          placeholder="Ej: tractor 100 HP, sembradora directa..."
+                          className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 placeholder:text-zinc-400"
+                        />
+                      </div>
+                    )}
+
+                    {formState.tipo === "repuesto" && (
+                      <div>
+                        <label
+                          htmlFor="modelo"
+                          className="block text-xs font-bold tracking-wider uppercase text-zinc-950 mb-2"
+                        >
+                          ¿Para qué equipo?
+                        </label>
+                        <input
+                          id="modelo"
+                          type="text"
+                          value={formState.modelo}
+                          onChange={(e) =>
+                            setFormState({ ...formState, modelo: e.target.value })
+                          }
+                          placeholder="Ej: Pauny 580 ie, Gravo HWB 904..."
+                          className="w-full px-4 py-3 border-2 border-zinc-950 focus:border-zinc-950 focus:ring-4 focus:ring-yellow-400/50 outline-none transition-all text-sm bg-white text-zinc-950 placeholder:text-zinc-400"
+                        />
+                      </div>
+                    )}
 
                     <div>
                       <label
@@ -430,8 +556,19 @@ export function Contact() {
                   <h3 className="font-normal text-3xl text-zinc-950 mb-3">
                     ¡Consulta enviada!
                   </h3>
-                  <p className="text-zinc-600 mb-6">
-                    Te respondemos en breve por WhatsApp.
+                  <p className="text-zinc-600 mb-2">
+                    Tu consulta llegó a nuestro email. WhatsApp se abrió automáticamente para confirmar.
+                  </p>
+                  <p className="text-zinc-400 text-sm mb-6">
+                    Si WhatsApp no se abrió,{" "}
+                    <a
+                      href={`https://wa.me/5492923431570?text=${buildWhatsAppText()}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-zinc-600 hover:text-zinc-950"
+                    >
+                      hacé clic acá
+                    </a>.
                   </p>
                   <button
                     onClick={() => setIsSuccess(false)}

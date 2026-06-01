@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { MessageCircle, Plus, Check, ImageOff } from "lucide-react";
 import { Product } from "../data/catalog";
+import { Tooltip } from "./Tooltip";
 
 interface ProductCardProps {
   product: Product;
@@ -207,35 +208,35 @@ export function ProductCard({
             Ver ficha →
           </button>
           <div className="flex items-center gap-2">
-            <button
-              onClick={handleWhatsApp}
-              className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:bg-[#20ba57] hover:scale-110 transition-all cursor-pointer"
-              aria-label="Consultar por WhatsApp"
-            >
-              <MessageCircle className="w-4 h-4" />
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onToggleCompare();
-              }}
-              className={`w-9 h-9 rounded-full flex items-center justify-center border-2 transition-all cursor-pointer ${
-                isInCompare
-                  ? "bg-yellow-400 border-yellow-400 text-zinc-950"
-                  : "border-zinc-950 text-zinc-950 hover:bg-zinc-950 hover:text-white"
-              }`}
-              aria-label={
-                isInCompare
-                  ? "Remover de comparación"
-                  : "Agregar a comparación"
-              }
-            >
-              {isInCompare ? (
-                <Check className="w-4 h-4" />
-              ) : (
-                <Plus className="w-4 h-4" />
-              )}
-            </button>
+            <Tooltip text="Consultar por WhatsApp">
+              <button
+                onClick={handleWhatsApp}
+                className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:bg-[#20ba57] hover:scale-110 transition-all cursor-pointer"
+                aria-label="Consultar por WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4" />
+              </button>
+            </Tooltip>
+            <Tooltip text={isInCompare ? "Quitar de comparación" : "Agregar a comparación"}>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleCompare();
+                }}
+                className={`w-9 h-9 rounded-full flex items-center justify-center border-2 transition-all cursor-pointer ${
+                  isInCompare
+                    ? "bg-yellow-400 border-yellow-400 text-zinc-950"
+                    : "border-zinc-950 text-zinc-950 hover:bg-zinc-950 hover:text-white"
+                }`}
+                aria-label={isInCompare ? "Quitar de comparación" : "Agregar a comparación"}
+              >
+                {isInCompare ? (
+                  <Check className="w-4 h-4" />
+                ) : (
+                  <Plus className="w-4 h-4" />
+                )}
+              </button>
+            </Tooltip>
           </div>
         </div>
       </div>
