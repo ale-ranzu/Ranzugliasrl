@@ -4,8 +4,9 @@ import paunyLogo from '../../imports/pauny/pauny.png';
 const stats = [
   { number: '50+', label: 'Años en el mercado' },
   { number: '10+', label: 'Marcas distribuidas' },
-  { number: 'Pauny', label: 'Concesionario oficial' },
+  { number: 'Pauny', label: 'Distribuidor autorizado' },
   { number: 'Gravo', label: 'Distribuidor autorizado' },
+  { number: 'YTO', label: 'Distribuidor autorizado' },
 ];
 
 export function About() {
@@ -30,7 +31,7 @@ export function About() {
               Potencia y solidez en el campo
             </h2>
             <p className="text-lg text-zinc-700 leading-relaxed mb-4">
-             Somos concesionario oficial de Pauny, distribuidores de Gravo y trabajamos junto a las marcas líderes del agro argentino.
+             Somos distribuidores de Pauny, Gravo y YTO, y trabajamos junto a las marcas líderes del agro argentino.
             </p>
             <p className="text-base text-zinc-600 leading-relaxed mb-8">
              Nuestro equipo conoce el campo de verdad, porque forma parte de él. Por eso ofrecemos asesoramiento claro, atención postventa y repuestos disponibles para que nunca te detengas.
@@ -45,7 +46,7 @@ export function About() {
                 />
               </div>
               <span className="text-xs font-bold tracking-wide uppercase text-zinc-500">
-                Concesionario Oficial · Distribuidor Gravo
+                Distribuidor Pauny · Gravo · YTO
               </span>
             </div>
           </motion.div>

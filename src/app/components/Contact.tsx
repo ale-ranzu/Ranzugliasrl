@@ -68,18 +68,18 @@ export function Contact() {
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Dirección",
-      value: "Av. 25 de Mayo 1541 · Coronel Pringles · Buenos Aires",
+      value: "Repuestos: Av. 25 de Mayo 1541 · Coronel Pringles · Buenos Aires",
     },
     {
       icon: <Clock className="w-5 h-5" />,
       label: "Horario",
-      value: "Lun–Vie 8 a 13h / 15 a 19h · Sáb 8 a 13h",
+      value: "Lun–Vie 8 a 12h / 15:30 a 19:30h · Sáb 8 a 12h",
     },
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "ranzugliasrl@gmail.com",
-      link: "mailto:ranzugliasrl@gmail.com",
+      value: "humbertoranzugliasrl@gmail.com",
+      link: "mailto:humbertoranzugliasrl@gmail.com",
     },
     {
       icon: <Instagram className="w-5 h-5" />,
@@ -91,7 +91,7 @@ export function Contact() {
 
   return (
     <section id="contacto" className="bg-yellow-400 py-20">
-      <div className="w-full lg:max-w-[1024px]   xl:max-w-[1280px]  2xl:max-w-[1536px] mx-auto px-6">
+      <div className="w-full lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px] mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Info */}
           <motion.div
