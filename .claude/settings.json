@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "WebFetch(domain:www.bice.com.ar)"
+      "WebFetch(domain:www.bice.com.ar)",
+      "Bash(npm run *)"
     ]
   }
 }

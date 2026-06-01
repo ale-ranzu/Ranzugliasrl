@@ -27,7 +27,6 @@ export default function App() {
           setCompareProducts={setCompareProducts}
         />
         <Financing />
-        <SpareParts />
         <About />
         <Contact />
       </main>

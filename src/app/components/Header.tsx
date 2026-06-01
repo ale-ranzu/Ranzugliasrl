@@ -7,6 +7,7 @@ const navItems = [
   { id: "inicio", label: "Inicio" },
   { id: "catalogo", label: "Catálogo" },
   { id: "financiamiento", label: "Financiamiento" },
+  { id: "repuestos", label: "Repuestos" },
   { id: "nosotros", label: "Nosotros" },
   { id: "contacto", label: "Contacto" },
 ];

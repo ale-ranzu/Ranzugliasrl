@@ -1,0 +1,17 @@
+export function Maps() {
+  return (
+    <section className="w-full h-[420px]">
+      <iframe
+        title="Ubicación Ranzuglia SRL"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.0004872600553!2d-61.36211472304235!3d-37.97711794339346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95eccb10678f1d7f%3A0xadb42f4aa98c7e43!2sHumberto%20Ranzuglia%20S.R.L!5e0!3m2!1ses-419!2sar!4v1780342973168!5m2!1ses-419!2sar"
+       
+        width="100%"
+        height="100%"
+        style={{ border: 0, display: "block" }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </section>
+  );
+}

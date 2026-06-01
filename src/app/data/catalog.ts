@@ -1,5 +1,6 @@
 import bertiniNeu from '../../imports/bertini/bertini-Modelo-16mil-1.png';
 import gherardiDrill600 from '../../imports/gherardi/gherardi-AIR-DRILL-G-600.png';
+import usadoChasisG600 from '../../imports/usados/Chasis-G600.webp';
 import gherardiDrill800 from '../../imports/gherardi/gherardi-AIR-DRILL-G-800.png';
 import gherardiGF from '../../imports/gherardi/gherardi-G100-G100M-G117.png';
 import gherardiPlanter900 from '../../imports/gherardi/gherardi-G-900-mono-disco.png';
@@ -123,6 +124,21 @@ export interface Product {
 }
 
 export const CATALOG: Product[] = [
+
+  // ── USADOS ───────────────────────────────────────────────────────────
+  {
+    id: 'usado-chasis-g600',
+    estado: 'usado',
+    categoria: 'sembradora',
+    marca: 'Gherardi',
+    nombre: 'Chasis G600 con equipo Matermac',
+    tags: ['20 líneas', '52 cm entre líneas', 'Fertilización en línea', 'Mando mecánico'],
+    descripcion: 'Chasis Gherardi G600 con fertilización en línea. Equipo Matermac de 20 líneas a 52 cm. Mando mecánico con cajas originales de 16 marchas. Sin sensores.',
+    imagen: usadoChasisG600,
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Coronel Pringles, Bs. As.',
+  },
 
   // ── TRACTORES PAUNY ──────────────────────────────────────────────────
   {
