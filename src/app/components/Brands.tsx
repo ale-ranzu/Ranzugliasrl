@@ -8,7 +8,7 @@ import fametLogo from "../../imports/marcas/famet.jpg";
 import tecnocarLogo from "../../imports/marcas/tecnocar.png";
 import distrimaqLogo from "../../imports/marcas/distrimaq.webp";
 import ytoLogo from "../../imports/marcas/yto.png";
-import sylLogo from "../../imports/marcas/syl.jpg";
+import sylLogo from "../../imports/marcas/syl.webp";
 
 interface Brand {
   name: string;

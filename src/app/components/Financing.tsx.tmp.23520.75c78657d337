@@ -53,25 +53,14 @@ const paymentConditions = [
 
 const factoryOptions = [
   {
-    logo: logoPauny,
-    name: "Pauny",
-    logoClass: "",
-    href: "https://www.pauny.com.ar/ar/plan_rino/",
-    desc: "Plan Rino — financiamiento oficial de fábrica para tractores nuevos. Condiciones preferenciales directas del fabricante.",
-  },
-  {
     logo: logoTecnocar,
     name: "Tecnocar",
     logoClass: "brightness-0 invert",
-    href: null,
-    desc: null,
   },
   {
     logo: logoSyl,
     name: "SYL",
     logoClass: "brightness-0 invert",
-    href: null,
-    desc: null,
   },
 ];
 
@@ -155,7 +144,10 @@ export function Financing() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ delay: index * 0.07 }}
-                    className="bg-white/5 border border-white/10 rounded-lg p-7 transition-all hover:bg-white/10 hover:border-yellow-400/40"
+                    className={`
+                      bg-white/5 border rounded-lg p-7 transition-all hover:bg-white/10 hover:border-yellow-400/40
+                      ${option.featured ? "border-yellow-400/50 bg-yellow-400/10" : "border-white/10"}
+                    `}
                   >
                     <div className="mb-4 h-8 flex items-center">
                       <img
@@ -315,11 +307,11 @@ export function Financing() {
             >
               {/* Factory financing intro */}
               <p className="text-center text-white/50 text-sm mb-8 max-w-xl mx-auto">
-                Financiación directa sin banco intermediario. Condiciones
-                propias de cada fabricante.
+                Financiación directa sin banco intermediario. Las mismas
+                condiciones para Tecnocar y SYL.
               </p>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                 {factoryOptions.map((brand, index) => (
                   <motion.div
                     key={brand.name}
@@ -335,69 +327,49 @@ export function Financing() {
                         alt={brand.name}
                         className={`h-7 w-auto object-contain ${brand.logoClass}`}
                       />
-                      {!brand.href && (
-                        <div className="text-right">
-                          <span className="block text-2xl font-black text-white leading-none">
-                            12
-                          </span>
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-yellow-400">
-                            cheques sin interés
-                          </span>
-                        </div>
-                      )}
+                      <div className="text-right">
+                        <span className="block text-2xl font-black text-white leading-none">
+                          12
+                        </span>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-yellow-400">
+                          cheques sin interés
+                        </span>
+                      </div>
                     </div>
 
-                    {/* Content: conditions table or description+link */}
+                    {/* Conditions */}
                     <div className="px-7 py-5">
-                      {brand.href ? (
-                        <div className="flex flex-col gap-4">
-                          <p className="text-white/60 text-sm leading-relaxed">
-                            {brand.desc}
-                          </p>
-                          <a
-                            href={brand.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition-colors"
+                      <p className="text-xs font-bold tracking-[0.15em] uppercase text-white/40 mb-4">
+                        Condiciones de pago
+                      </p>
+                      <div className="space-y-2">
+                        {paymentConditions.map((cond) => (
+                          <div
+                            key={cond.label}
+                            className="flex items-center justify-between py-2.5 border-b border-white/8 last:border-0"
                           >
-                            Ver Plan Rino →
-                          </a>
-                        </div>
-                      ) : (
-                        <>
-                          <p className="text-xs font-bold tracking-[0.15em] uppercase text-white/40 mb-4">
-                            Condiciones de pago
-                          </p>
-                          <div className="space-y-2">
-                            {paymentConditions.map((cond) => (
-                              <div
-                                key={cond.label}
-                                className="flex items-center justify-between py-2.5 border-b border-white/8 last:border-0"
-                              >
-                                <div>
-                                  <span className="text-white/80 text-sm font-medium">
-                                    {cond.label}
-                                  </span>
-                                  {cond.sub && (
-                                    <span className="text-white/40 text-xs ml-2">
-                                      ({cond.sub})
-                                    </span>
-                                  )}
-                                </div>
-                                {cond.discount ? (
-                                  <span className="bg-yellow-400/15 border border-yellow-400/30 text-yellow-400 text-sm font-black px-3 py-1 rounded-md">
-                                    {cond.discount} dto.
-                                  </span>
-                                ) : (
-                                  <span className="text-white/30 text-xs uppercase tracking-wide">
-                                    precio lista
-                                  </span>
-                                )}
-                              </div>
-                            ))}
+                            <div>
+                              <span className="text-white/80 text-sm font-medium">
+                                {cond.label}
+                              </span>
+                              {cond.sub && (
+                                <span className="text-white/40 text-xs ml-2">
+                                  ({cond.sub})
+                                </span>
+                              )}
+                            </div>
+                            {cond.discount ? (
+                              <span className="bg-yellow-400/15 border border-yellow-400/30 text-yellow-400 text-sm font-black px-3 py-1 rounded-md">
+                                {cond.discount} dto.
+                              </span>
+                            ) : (
+                              <span className="text-white/30 text-xs uppercase tracking-wide">
+                                precio lista
+                              </span>
+                            )}
                           </div>
-                        </>
-                      )}
+                        ))}
+                      </div>
                     </div>
                   </motion.div>
                 ))}

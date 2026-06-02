@@ -58,7 +58,7 @@ export function ProductCard({
                 className="w-full h-auto"
               />
             ) : (
-              <div className="flex flex-col items-center gap-2 text-zinc-400">
+              <div className="flex flex-col items-center gap-2 text-white">
                 <ImageOff className="w-10 h-10" />
                 <span className="text-xs font-semibold tracking-wider uppercase">Sin imagen</span>
               </div>
@@ -173,7 +173,7 @@ export function ProductCard({
             className="w-full h-full object-contain"
           />
         ) : (
-          <div className="flex flex-col items-center gap-2 text-zinc-400">
+          <div className="flex flex-col items-center gap-2 text-white">
             <ImageOff className="w-12 h-12" />
             <span className="text-xs font-semibold tracking-wider uppercase">Sin imagen</span>
           </div>
