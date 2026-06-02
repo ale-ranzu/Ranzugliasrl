@@ -311,10 +311,10 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
 
       {/* Floating Compare Button */}
       {compareProducts.length > 0 && (
-        <div className="fixed bottom-8 right-8 z-50">
+        <div className="fixed bottom-8 right-8 z-50 flex items-stretch shadow-2xl">
           <button
             onClick={() => setCompareDrawerOpen(true)}
-            className="flex items-center gap-3 bg-zinc-950 text-white px-6 py-4 font-semibold text-base shadow-2xl transition-all hover:bg-zinc-800 hover:scale-105 cursor-pointer border-2 border-yellow-400"
+            className="flex items-center gap-3 bg-zinc-950 text-white px-6 py-4 font-semibold text-base transition-all hover:bg-zinc-800 cursor-pointer border-2 border-r-0 border-yellow-400"
           >
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-yellow-400 text-zinc-950 flex items-center justify-center font-black text-sm">
@@ -323,6 +323,13 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
               <span>Comparar productos</span>
             </div>
             <ArrowRight className="w-5 h-5" />
+          </button>
+          <button
+            onClick={() => setCompareProducts([])}
+            className="bg-yellow-400 text-zinc-950 px-3 flex items-center justify-center hover:bg-yellow-300 transition-colors cursor-pointer border-2 border-yellow-400"
+            aria-label="Limpiar comparación"
+          >
+            <X className="w-5 h-5" />
           </button>
         </div>
       )}
@@ -335,6 +342,7 @@ export function Catalog({ compareProducts, setCompareProducts }: CatalogProps) {
         onRemove={(product) =>
           setCompareProducts(compareProducts.filter((p) => p.id !== product.id))
         }
+        onClearAll={() => setCompareProducts([])}
       />
     </section>
   );
