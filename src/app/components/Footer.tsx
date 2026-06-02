@@ -134,11 +134,12 @@ export function Footer() {
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-yellow-400 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                ranzugliasrl@gmail.com
+                humbertoranzugliasrl@gmail.com
               </a>
-              <div className="flex items-center gap-2 text-sm text-white/60">
+              <div className="flex items-start gap-2 text-sm text-white/60">
                 <MapPin className="w-4 h-4" />
-                Av. 25 de Mayo 1541, Coronel Pringles, Bs. As.
+                Av. 25 de Mayo 1541, Coronel Pringles, Bs. As. <br />
+                Ruta 51 km 616, Coronel Pringles, Bs. As.
               </div>
             </div>
           </div>

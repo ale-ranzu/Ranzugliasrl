@@ -105,7 +105,7 @@ export function Financing() {
           <h2 className="font-normal text-4xl md:text-5xl text-white mb-4">
             OPCIONES DE PAGO Y CRÉDITO
           </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg text-white/60 mx-auto">
             Facilitamos el acceso a tu maquinaria con múltiples alternativas de
             financiamiento.
           </p>
@@ -314,12 +314,12 @@ export function Financing() {
               transition={{ duration: 0.2 }}
             >
               {/* Factory financing intro */}
-              <p className="text-center text-white/50 text-sm mb-8 max-w-xl mx-auto">
+              <p className="text-center text-white/50 text-sm mb-8 mx-auto">
                 Financiación directa sin banco intermediario. Condiciones
                 propias de cada fabricante.
               </p>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {factoryOptions.map((brand, index) => (
                   <motion.div
                     key={brand.name}

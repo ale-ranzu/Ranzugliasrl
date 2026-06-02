@@ -177,10 +177,10 @@ export function SpareParts() {
           className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white/5 border border-white/10 rounded-xl px-8 py-6"
         >
           <div>
-            <p className="text-white font-semibold text-lg leading-snug">
+            <p className="text-white font-semibold text-lg md:text-2xl leading-snug">
               ¿Necesitás un repuesto o querés saber disponibilidad?
             </p>
-            <p className="text-white/50 text-sm mt-1">
+            <p className="text-white/50 text-md md:text-lg mt-1">
               Consultanos por WhatsApp y te respondemos a la brevedad.
             </p>
           </div>
