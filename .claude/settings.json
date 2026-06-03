@@ -3,7 +3,18 @@
     "allow": [
       "WebSearch",
       "WebFetch(domain:www.bice.com.ar)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(Get-ChildItem dist/assets/)",
+      "Bash(dir \"dist\\\\assets\")",
+      "Bash(cmd /c \"dir dist\\\\assets 2>&1\")",
+      "Bash(cmd /c \"dir dist\\\\assets\\\\\")",
+      "Bash(cmd /c 'dir dist\\\\assets')",
+      "Bash(cmd /c 'mkdir C:\\\\temp\\\\ranzuglia-dist 2>nul & npx vite build --outDir C:\\\\temp\\\\ranzuglia-dist --emptyOutDir 2>&1')",
+      "Bash(npx vite *)",
+      "Bash(cmd /c 'dir C:\\\\temp\\\\ranzuglia-dist')"
+    ],
+    "additionalDirectories": [
+      "C:\\temp\\ranzuglia-dist"
     ]
   }
 }
