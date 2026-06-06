@@ -154,6 +154,17 @@ export function Footer() {
             <div>
              Distribuidor Pauny · Gravo · YTO · Coronel Pringles
             </div>
+            <div>
+              Diseño y desarrollo·{" "}
+              <a
+                href="https://www.linkedin.com/in/alejandra-ranzuglia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-400 transition-colors"
+              >
+                Alejandra Ranzuglia
+              </a>
+            </div>
           </div>
         </div>
       </div>

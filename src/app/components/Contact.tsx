@@ -116,30 +116,22 @@ export function Contact() {
       .map(p => p.nombre);
   }, [formState.tipo]);
 
+  const locales = [
+    {
+      label: "Ventas",
+      phone: "2923 43 1570",
+      phoneLink: "https://wa.me/5492923431570",
+      address: "Ruta 51 km 616 · Coronel Pringles",
+    },
+    {
+      label: "Repuestos",
+      phone: "2923 51 5685",
+      phoneLink: "https://wa.me/5492923515685",
+      address: "Av. 25 de Mayo 1541 · Coronel Pringles",
+    },
+  ];
+
   const contactInfo = [
-    {
-      icon: <Phone className="w-5 h-5" />,
-      label: "Ventas",
-      value: "2923 43 1570",
-      link: "https://wa.me/5492923431570",
-    },
-    {
-      icon: <Phone className="w-5 h-5" />,
-      label: "Repuestos",
-      value: "2923 51 5685",
-      link: "https://wa.me/5492923515685",
-    },
-   
-    {
-      icon: <MapPin className="w-5 h-5" />,
-      label: "Ventas",
-      value: "Ruta 51 km 616 · Coronel Pringles · Buenos Aires",
-    },
-     {
-      icon: <MapPin className="w-5 h-5" />,
-      label: "Repuestos",
-      value: "Av. 25 de Mayo 1541 · Coronel Pringles · Buenos Aires",
-    },
     {
       icon: <Clock className="w-5 h-5" />,
       label: "Horario",
@@ -184,7 +176,38 @@ export function Contact() {
              Te respondemos por WhatsApp en el día o te esperamos en nuestro local para asesorarte personalmente.
             </p>
 
-            {/* Contact Info */}
+            {/* Locales: Ventas y Repuestos */}
+            <div className="grid grid-cols-2 gap-3 mb-2">
+              {locales.map((local, index) => (
+                <motion.div
+                  key={local.label}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-zinc-950/10 rounded-lg p-4 space-y-2"
+                >
+                  <div className="text-xs font-black tracking-wider uppercase text-zinc-950/50">
+                    {local.label}
+                  </div>
+                  <a
+                    href={local.phoneLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 font-bold text-zinc-950 hover:underline text-sm"
+                  >
+                    <Phone className="w-4 h-4 shrink-0" />
+                    {local.phone}
+                  </a>
+                  <div className="flex items-start gap-1.5 text-sm text-zinc-950/70">
+                    <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+                    {local.address}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Resto de info */}
             <div className="space-y-0">
               {contactInfo.map((info, index) => (
                 <motion.div
@@ -202,16 +225,8 @@ export function Contact() {
                   {info.link ? (
                     <a
                       href={info.link}
-                      target={
-                        info.link.startsWith("http")
-                          ? "_blank"
-                          : undefined
-                      }
-                      rel={
-                        info.link.startsWith("http")
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
+                      target={info.link.startsWith("http") ? "_blank" : undefined}
+                      rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="font-semibold text-base text-zinc-950 hover:underline"
                     >
                       {info.value}

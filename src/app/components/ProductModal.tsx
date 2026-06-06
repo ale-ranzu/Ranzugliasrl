@@ -69,7 +69,7 @@ export function ProductModal({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-start md:items-center justify-center p-4 pt-24 md:pt-4 overflow-y-auto"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

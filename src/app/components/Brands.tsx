@@ -23,10 +23,10 @@ const brands: Brand[] = [
   { name: "Gherardi",  image: gherardiLogo,  href: "https://www.gherardi.com.ar" },
   { name: "Bertini",   image: bertiniLogo,   href: "https://www.bertini.com.ar" },
   { name: "Pampero",   image: pamperoLogo,   href: "https://mpampero.com.ar" },
-  { name: "Belén",     image: belenLogo, href:"https://acopladosbelensa.com.ar/" },
-  { name: "Dems",      image: demsLogo, href: "https://www.instagram.com/agropartesdems/" },
-  { name: "Famet",     image: fametLogo, href: "https://www.famet.com.ar/" },
-  { name: "SYL",       image: sylLogo, href: "https://www.instagram.com/syl.implementos/?hl=es" },
+  { name: "Belén",     image: belenLogo,     href: "https://acopladosbelensa.com.ar/" },
+  { name: "Dems",      image: demsLogo,      href: "https://www.instagram.com/agropartesdems/" },
+  { name: "Famet",     image: fametLogo,     href: "https://www.famet.com.ar/" },
+  { name: "SYL",       image: sylLogo,       href: "https://www.instagram.com/syl.implementos/?hl=es" },
   { name: "Tecnocar",  image: tecnocarLogo,  href: "https://tecnocar.com.ar" },
   { name: "Distrimaq", image: distrimaqLogo, href: "https://distrimaqweb.com.ar" },
   { name: "YTO",       image: ytoLogo,       href: "https://ytocorp.com" },
@@ -34,7 +34,7 @@ const brands: Brand[] = [
 
 function BrandCard({ brand }: { brand: Brand }) {
   return (
-    <div className="bg-white border border-zinc-200 rounded-lg h-20 w-28 lg:w-36 flex items-center justify-center p-3 transition-all hover:border-zinc-950 hover:-translate-y-1 hover:shadow-lg select-none">
+    <div className="bg-white border border-zinc-200 rounded-lg h-20 w-28 flex items-center justify-center p-3 transition-all hover:border-zinc-950 hover:-translate-y-1 hover:shadow-lg select-none">
       {brand.text ? (
         <span className="font-black text-xl text-zinc-950">{brand.name}</span>
       ) : brand.image ? (
@@ -55,6 +55,8 @@ export function Brands() {
   return (
     <section id="marcas" className="bg-yellow-400 py-16">
       <style>{`
+        .brands-scroll { scrollbar-width: none; }
+        .brands-scroll::-webkit-scrollbar { display: none; }
         @keyframes brand-marquee {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
@@ -81,13 +83,38 @@ export function Brands() {
         </h2>
       </div>
 
-      {/* Carousel */}
-      <div className="relative overflow-hidden brand-marquee-wrapper py-4">
-        {/* Fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-yellow-400 to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-yellow-400 to-transparent z-10" />
+      {/* Mobile: scroll manual */}
+      <div
+        className="brands-scroll overflow-x-auto py-4 pl-6 flex gap-3 lg:hidden"
+        style={{ WebkitOverflowScrolling: "touch", scrollSnapType: "x mandatory" }}
+      >
+        {brands.map((brand, i) => {
+          const isLast = i === brands.length - 1;
+          const cardWrapper = `flex-shrink-0 ${isLast ? "pr-6" : ""}`;
+          const style = { scrollSnapAlign: "start" as const };
+          return brand.href ? (
+            <a
+              key={i}
+              href={brand.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cardWrapper}
+              style={style}
+            >
+              <BrandCard brand={brand} />
+            </a>
+          ) : (
+            <div key={i} className={cardWrapper} style={style}>
+              <BrandCard brand={brand} />
+            </div>
+          );
+        })}
+      </div>
 
-        {/* Track — duplicated for seamless loop */}
+      {/* Desktop: carrusel con loop infinito */}
+      <div className="relative overflow-hidden brand-marquee-wrapper py-4 hidden lg:block">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-yellow-400 to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-yellow-400 to-transparent z-10" />
         <div className="brand-marquee flex">
           {[...brands, ...brands].map((brand, i) => {
             const wrapper = "px-1.5 flex-shrink-0";

@@ -15,7 +15,9 @@
       "Bash(zip -r C:\\\\temp\\\\ranzuglia-srl.zip .)",
       "Bash(powershell -Command \"Compress-Archive -Path 'C:\\\\temp\\\\ranzuglia-dist\\\\*' -DestinationPath 'C:\\\\temp\\\\ranzuglia-srl.zip' -Force\")",
       "Bash(powershell -Command \"Get-Item 'C:\\\\temp\\\\ranzuglia-srl.zip' | Select-Object Name, Length\")",
-      "Bash(powershell -Command \"Compress-Archive -Path 'C:\\\\temp\\\\ranzuglia-dist\\\\*' -DestinationPath 'C:\\\\temp\\\\ranzuglia-srl.zip' -Force; \\(Get-Item 'C:\\\\temp\\\\ranzuglia-srl.zip'\\).Length / 1MB\")"
+      "Bash(powershell -Command \"Compress-Archive -Path 'C:\\\\temp\\\\ranzuglia-dist\\\\*' -DestinationPath 'C:\\\\temp\\\\ranzuglia-srl.zip' -Force; \\(Get-Item 'C:\\\\temp\\\\ranzuglia-srl.zip'\\).Length / 1MB\")",
+      "Bash(cmd /c 'for %I in \\(\"C:\\\\Users\\\\ale_r\\\\Dropbox\\\\ranzuglia\\\\03-proyectos\\\\web2026\\\\Ranzugliasrl\\\\public\\\\og-image.jpg\"\\) do echo %~zI bytes')",
+      "Bash(powershell -Command \"Compress-Archive -Path 'C:\\\\temp\\\\ranzuglia-dist\\\\*' -DestinationPath 'C:\\\\temp\\\\ranzuglia-srl.zip' -Force; [math]::Round\\(\\(Get-Item 'C:\\\\temp\\\\ranzuglia-srl.zip'\\).Length / 1MB, 1\\)\")"
     ],
     "additionalDirectories": [
       "C:\\temp\\ranzuglia-dist"

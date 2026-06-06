@@ -212,11 +212,11 @@ export function Financing() {
 
               {/* Calculator */}
               <div className="bg-zinc-950 border border-yellow-400/30 rounded-xl p-8 max-w-4xl mx-auto">
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex flex-col items-start mb-6 gap-2">
+                  <Calculator className="w-6 h-6 text-yellow-400" />
                   <h3 className="font-normal text-2xl text-white">
                     Calculadora estimada de Cuotas
                   </h3>
-                  <Calculator className="w-6 h-6 text-yellow-400" />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
@@ -285,7 +285,7 @@ export function Financing() {
                         ${Math.round(monthlyPayment).toLocaleString("es-AR")}
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 text-center">
+                    <div className="flex flex-col gap-3 text-center">
                       <div>
                         <div className="text-xs text-white/40 mb-1">
                           Total a pagar

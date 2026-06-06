@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import tractorImage from "../../imports/pauny/pauny-540C-Bravo.png";
+import bgHero from "../../imports/bg-hero.avif";
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -16,13 +17,13 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center overflow-hidden bg-zinc-950"
+      className="relative min-h-screen flex items-start md:items-center overflow-x-hidden md:overflow-hidden bg-zinc-950"
     >
       {/* Campo Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop')`,
+          backgroundImage: `url(${bgHero})`,
         }}
       />
 
@@ -49,8 +50,8 @@ export function Hero() {
       />
 
       {/* Container with max-width 1800px */}
-      <div className="w-full max-w-[1800px] mx-auto px-6 relative z-10">
-        <div className="relative min-h-[calc(100vh-180px)] flex items-center">
+      <div className="w-full max-w-[1800px] mx-auto px-6 relative z-10 pt-28 pb-32 md:pt-0 md:pb-0">
+        <div className="relative min-h-0 md:min-h-[calc(100vh-180px)] flex items-center">
           {/* Content - Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
