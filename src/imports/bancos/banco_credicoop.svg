@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" fill="none">
+  <text x="0" y="22" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="white" letter-spacing="0.5">BANCO</text>
+  <text x="52" y="22" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="white" letter-spacing="0.5">CREDICOOP</text>
+  <rect x="0" y="30" width="30" height="5" fill="#E30613"/>
+  <rect x="32" y="30" width="30" height="5" fill="#F7A600"/>
+  <rect x="64" y="30" width="30" height="5" fill="#009F4D"/>
+  <rect x="96" y="30" width="30" height="5" fill="#005FAA"/>
+  <rect x="128" y="30" width="30" height="5" fill="#6A1F7A"/>
+</svg>

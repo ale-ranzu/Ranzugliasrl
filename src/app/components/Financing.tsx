@@ -7,6 +7,7 @@ import logoPampa from "../../imports/bancos/banco_pampa.svg?url";
 import logoGalicia from "../../imports/bancos/Logo_Banco_Galicia.svg?url";
 import logoMacro from "../../imports/bancos/Logo_Banco_Macro.svg?url";
 import logoBice from "../../imports/bancos/Bice-logo.svg?url";
+import logoCredicoop from "../../imports/bancos/banco_credicoop.svg?url";
 import logoPauny from "../../imports/pauny/pauny_logo_negativo.svg?url";
 import logoTecnocar from "../../imports/marcas/tecnocar.png";
 import logoSyl from "../../imports/marcas/syl.webp";
@@ -41,6 +42,11 @@ const bankOptions = [
     desc: "Banco de Inversión y Comercio Exterior. Líneas especiales para inversión en maquinaria.",
     logo: logoBice,
     href: "https://www.bice.com.ar/productos/inversion/creditosagro2026/",
+  },
+  {
+    desc: "Financiamiento para implementos DEMS. Hasta el 80% del valor del bien — 36 cuotas (TNA 20%) o 60 cuotas (TNA 22,80%). Promoción válida hasta el 15/08.",
+    logo: logoCredicoop,
+    href: "https://www.bancocredicoop.coop/",
   },
 ];
 

@@ -11,7 +11,11 @@
       "Bash(cmd /c 'dir dist\\\\assets')",
       "Bash(cmd /c 'mkdir C:\\\\temp\\\\ranzuglia-dist 2>nul & npx vite build --outDir C:\\\\temp\\\\ranzuglia-dist --emptyOutDir 2>&1')",
       "Bash(npx vite *)",
-      "Bash(cmd /c 'dir C:\\\\temp\\\\ranzuglia-dist')"
+      "Bash(cmd /c 'dir C:\\\\temp\\\\ranzuglia-dist')",
+      "Bash(zip -r C:\\\\temp\\\\ranzuglia-srl.zip .)",
+      "Bash(powershell -Command \"Compress-Archive -Path 'C:\\\\temp\\\\ranzuglia-dist\\\\*' -DestinationPath 'C:\\\\temp\\\\ranzuglia-srl.zip' -Force\")",
+      "Bash(powershell -Command \"Get-Item 'C:\\\\temp\\\\ranzuglia-srl.zip' | Select-Object Name, Length\")",
+      "Bash(powershell -Command \"Compress-Archive -Path 'C:\\\\temp\\\\ranzuglia-dist\\\\*' -DestinationPath 'C:\\\\temp\\\\ranzuglia-srl.zip' -Force; \\(Get-Item 'C:\\\\temp\\\\ranzuglia-srl.zip'\\).Length / 1MB\")"
     ],
     "additionalDirectories": [
       "C:\\temp\\ranzuglia-dist"
