@@ -29,7 +29,6 @@ export function Contact() {
     const tipoLabels: Record<string, string> = {
       "tractor-pauny": "Tractores Pauny",
       "tractor-gravo": "Tractores Gravo",
-      "tractor-yto": "Tractores YTO",
       sembradora: "Sembradoras",
       rastra: "Rastras",
       acoplado: "Acoplados",
@@ -107,7 +106,7 @@ export function Contact() {
     }, 5000);
   };
 
-  const CATALOG_CATEGORIES = ['tractor-pauny', 'tractor-gravo', 'tractor-yto', 'sembradora', 'rastra', 'acoplado', 'implemento'];
+  const CATALOG_CATEGORIES = ['tractor-pauny', 'tractor-gravo', 'sembradora', 'rastra', 'acoplado', 'implemento'];
 
   const modeloOptions = useMemo(() => {
     if (!CATALOG_CATEGORIES.includes(formState.tipo)) return [];
@@ -177,7 +176,7 @@ export function Contact() {
             </p>
 
             {/* Locales: Ventas y Repuestos */}
-            <div className="grid grid-cols-2 gap-3 mb-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-2">
               {locales.map((local, index) => (
                 <motion.div
                   key={local.label}
@@ -346,9 +345,6 @@ export function Contact() {
                         </option>
                         <option value="tractor-gravo" className="text-zinc-950 font-medium">
                           Tractores Gravo
-                        </option>
-                        <option value="tractor-yto" className="text-zinc-950 font-medium">
-                          Tractores YTO
                         </option>
                         <option value="sembradora" className="text-zinc-950 font-medium">
                           Sembradoras

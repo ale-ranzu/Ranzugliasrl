@@ -81,7 +81,7 @@ export function Hero() {
             </h1>
 
             <p className="text-xl text-white/70 leading-relaxed mb-10 max-w-2xl">
-              Tractores Pauny, Gravo, YTO, sembradoras, acoplados e implementos.
+              Tractores Pauny, Gravo, sembradoras, acoplados e implementos.
               <span className="block mt-2 text-yellow-400 font-semibold">
                 + de 50 años de trayectoria en el agro argentino.
               </span>
@@ -238,7 +238,7 @@ export function Hero() {
               EST. 1973 · + DE 50 AÑOS DE TRAYECTORIA
             </div>
             <div className="text-white/50">
-              Distribuidor Pauny · Gravo · YTO
+              Distribuidor Pauny · Gravo
             </div>
           </div>
         </div>

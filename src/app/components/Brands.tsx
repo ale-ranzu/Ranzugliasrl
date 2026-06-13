@@ -7,7 +7,6 @@ import demsLogo from "../../imports/marcas/dems.png";
 import fametLogo from "../../imports/marcas/famet.jpg";
 import tecnocarLogo from "../../imports/marcas/tecnocar.png";
 import distrimaqLogo from "../../imports/marcas/distrimaq.webp";
-import ytoLogo from "../../imports/marcas/yto.png";
 import sylLogo from "../../imports/marcas/syl.webp";
 
 interface Brand {
@@ -29,7 +28,6 @@ const brands: Brand[] = [
   { name: "SYL",       image: sylLogo,       href: "https://www.instagram.com/syl.implementos/?hl=es" },
   { name: "Tecnocar",  image: tecnocarLogo,  href: "https://tecnocar.com.ar" },
   { name: "Distrimaq", image: distrimaqLogo, href: "https://distrimaqweb.com.ar" },
-  { name: "YTO",       image: ytoLogo,       href: "https://ytocorp.com" },
 ];
 
 function BrandCard({ brand }: { brand: Brand }) {

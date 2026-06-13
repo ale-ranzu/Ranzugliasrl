@@ -33,7 +33,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-white/50 leading-relaxed mb-4">
-              Distribuidor Pauny, Gravo y YTO. Sembradoras, acoplados e implementos.
+              Distribuidor Pauny y Gravo. Sembradoras, acoplados e implementos.
             </p>
             <div className="flex gap-3">
               <a
@@ -152,7 +152,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
             <div>© {year} Humberto Ranzuglia S.R.L.</div>
             <div>
-             Distribuidor Pauny · Gravo · YTO · Coronel Pringles
+             Distribuidor Pauny · Gravo · Coronel Pringles
             </div>
             <div>
               Diseño y desarrollo·{" "}

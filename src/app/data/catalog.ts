@@ -96,22 +96,10 @@ import tecnocarPF400 from '../../imports/tecnocar/pala-forrajera-pf400-01.webp';
 import tecnocarPF500 from '../../imports/tecnocar/pala-forrajera-pf500-01.webp';
 import tecnocarRT from '../../imports/tecnocar/retroexcavadora-03-1.webp';
 
-// ── YTO ───────────────────────────────────────────────────────────────────
-import ytoELX from '../../imports/yto/5-1-220-240hp-tractor-elx-series_01b.webp';
-import ytoELP from '../../imports/yto/5-2-260-300hp-tractor-elp-elz-series_01b.webp';
-import ytoELG from '../../imports/yto/5-3-160-195-hp-tractor-elg-series_01b.webp';
-import ytoNLX130 from '../../imports/yto/5-4-130-140hp-tractor-nlx-series_01b.webp';
-import ytoNLX80 from '../../imports/yto/5-5-1-80-115hp-tractor-nlx-nly-series_01b.webp';
-import ytoEF from '../../imports/yto/5-6-1-65-75hp-tractor-ef-emf-series_01b.webp';
-import ytoNMF from '../../imports/yto/5-7-55-70hp-tractor-nmf-series_01b.webp';
-import ytoEME from '../../imports/yto/5-8-45-55hp-tractor-eme-series_01b.webp';
-import ytoSK from '../../imports/yto/5-9-24-55hp-tractor-sk-esk-series_01b.webp';
-import ytoNarrow from '../../imports/yto/5-10-25-95hp-tractor-narrow-series_01b.webp';
-
 export interface Product {
   id: string;
   estado: 'nuevo' | 'usado';
-  categoria: 'tractor-pauny' | 'tractor-gravo' | 'tractor-yto' | 'sembradora' | 'rastra' | 'acoplado' | 'implemento' | 'vial';
+  categoria: 'tractor-pauny' | 'tractor-gravo' | 'sembradora' | 'rastra' | 'acoplado' | 'implemento' | 'vial';
   marca: string;
   nombre: string;
   hp?: string;
@@ -1465,154 +1453,11 @@ export const CATALOG: Product[] = [
     cabina: '—',
     origen: 'Argentina',
   },
-
-  // ── TRACTORES YTO ─────────────────────────────────────────────────────
-  {
-    id: 'yto-elx',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'ELX Series (220–240 HP)',
-    hp: '220–240 HP',
-    tags: ['220–240 HP', '6 cilindros', 'Gran potencia'],
-    descripcion: 'Tractor de 220–240 HP. Motor diesel de 6 cilindros turboalimentado. Alta potencia con reducido consumo de combustible y eficiencia energética. Ideal para grandes superficies y labores agrícolas pesadas.',
-    imagen: ytoELX,
-    peso: 'Consultar',
-    cabina: 'Cerrada c/ A.A.',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-elp',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'ELP / ELZ Series (260–300 HP)',
-    hp: '260–300 HP',
-    tags: ['260–300 HP', 'Alta tracción', 'Gran porte'],
-    descripcion: 'Tractor de 260–300 HP. Gran fuerza de tracción y excelente rendimiento para labores agrícolas de alta exigencia. Versátil y potente, apto para múltiples implementos y trabajos de campo.',
-    imagen: ytoELP,
-    peso: 'Consultar',
-    cabina: 'Cerrada c/ A.A.',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-elg',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'ELG Series (160–195 HP)',
-    hp: '160–195 HP',
-    tags: ['160–195 HP', '6 cilindros', '24 velocidades'],
-    descripcion: 'Tractor de 160–195 HP. Motor diesel de 6 cilindros de alta presión con riel común. Alta potencia con bajo consumo de combustible. Transmisión sincronizada de 24 velocidades.',
-    imagen: ytoELG,
-    peso: 'Consultar',
-    cabina: 'Cerrada c/ A.A.',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-nlx130',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'NLX Series (130–140 HP)',
-    hp: '130–140 HP',
-    tags: ['130–140 HP', '6 cilindros', 'Amplia cabina'],
-    descripcion: 'Tractor de 130–140 HP. Gran fuerza de tracción para labores agrícolas y transporte. Motor diesel de 6 cilindros de aspiración natural. Cabina con amplia visibilidad.',
-    imagen: ytoNLX130,
-    peso: 'Consultar',
-    cabina: 'Cerrada c/ A.A.',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-nlx80',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'NLX / NLY Series (80–115 HP)',
-    hp: '80–115 HP',
-    tags: ['80–115 HP', 'Cabina cerrada', 'A.A. opcional'],
-    descripcion: 'Tractor de 80–115 HP. Cabina cerrada con amplia visibilidad y comodidad. Calefacción y aire acondicionado opcionales. Amplia gama de modelos para distintas potencias y aplicaciones.',
-    imagen: ytoNLX80,
-    peso: 'Consultar',
-    cabina: 'Cerrada',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-ef',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'EF / EMF Series (55–75 HP)',
-    hp: '55–75 HP',
-    tags: ['55–75 HP', 'Gran torque', 'Bajo consumo'],
-    descripcion: 'Tractor de 55–75 HP. Motor diesel YTO con gran reserva de torque y alta potencia con bajo consumo. Diseño robusto para trabajo eficiente en campo y transporte.',
-    imagen: ytoEF,
-    peso: 'Consultar',
-    cabina: 'Abierta',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-nmf',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'NMF Series (55–70 HP)',
-    hp: '55–70 HP',
-    tags: ['55–70 HP', 'Euro 5', 'Motor Doosan'],
-    descripcion: 'Tractor de 55–70 HP. Motor diesel de alta presión de riel común Doosan, cumple norma Euro 5. Alta potencia con bajo consumo y bajo nivel de emisión de gases.',
-    imagen: ytoNMF,
-    peso: 'Consultar',
-    cabina: 'Abierta',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-eme',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'EME Series (45–55 HP)',
-    hp: '45–55 HP',
-    tags: ['45–55 HP', 'Compacto', 'Bajo mantenimiento'],
-    descripcion: 'Tractor de 45–55 HP. Diseño compacto y estético. Estructura sólida ideal para trabajos de campo y transporte. Motor confiable de buen rendimiento y bajo mantenimiento.',
-    imagen: ytoEME,
-    peso: 'Consultar',
-    cabina: 'Abierta',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-sk',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'SK / ESK Series (24–55 HP)',
-    hp: '24–55 HP',
-    tags: ['24–55 HP', 'Compacto', 'Maniobrable'],
-    descripcion: 'Tractor compacto de 24–55 HP. Diseñado para labores de campo y transporte. Motor diesel de aspiración natural con alta potencia y bajo consumo. Compacto y maniobrable.',
-    imagen: ytoSK,
-    peso: 'Consultar',
-    cabina: 'Abierta',
-    origen: 'China (importado)',
-  },
-  {
-    id: 'yto-narrow',
-    estado: 'nuevo',
-    categoria: 'tractor-yto',
-    marca: 'YTO',
-    nombre: 'Orchard / Narrow Series (35–115 HP)',
-    hp: '35–115 HP',
-    tags: ['35–115 HP', 'Angosto', 'Viñedos y huertos'],
-    descripcion: 'Tractor angosto de 35–115 HP, menos de 1,3 m de ancho. Diseñado para viñedos, huertos y cultivos en hileras. Disponible en versiones ESG, ESK, NLX, NME, NMF y NSK.',
-    imagen: ytoNarrow,
-    peso: 'Consultar',
-    cabina: 'Consultar',
-    origen: 'China (importado)',
-  },
 ];
 
 export const CATEGORY_LABELS: Record<Product['categoria'], string> = {
   'tractor-pauny': 'Tractores Pauny',
   'tractor-gravo': 'Tractores Gravo',
-  'tractor-yto': 'Tractores YTO',
   'sembradora': 'Sembradoras',
   'rastra': 'Rastras',
   'acoplado': 'Acoplados',
