@@ -49,13 +49,17 @@ export function ProductCard({
         <div className="flex flex-col md:flex-row gap-6">
           {/* Image */}
           <div
-            className={`${getBrandColor(product.marca)} rounded-lg flex items-center justify-center p-4 md:w-48 h-auto flex-shrink-0`}
+            className={
+              product.fotoCompleta
+                ? "rounded-lg overflow-hidden md:w-48 h-48 flex-shrink-0"
+                : `${getBrandColor(product.marca)} rounded-lg flex items-center justify-center p-4 md:w-48 h-auto flex-shrink-0`
+            }
           >
             {product.imagen ? (
               <img
                 src={product.imagen}
                 alt={product.nombre}
-                className="w-full h-auto"
+                className={product.fotoCompleta ? "w-full h-full object-cover" : "w-full h-auto"}
               />
             ) : (
               <div className="flex flex-col items-center gap-2 text-white">
@@ -164,13 +168,17 @@ export function ProductCard({
 
       {/* Image */}
       <div
-        className={`${getBrandColor(product.marca)} h-48 flex-shrink-0 flex items-center justify-center p-4 relative`}
+        className={
+          product.fotoCompleta
+            ? "h-48 flex-shrink-0 relative overflow-hidden"
+            : `${getBrandColor(product.marca)} h-48 flex-shrink-0 flex items-center justify-center p-4 relative`
+        }
       >
         {product.imagen ? (
           <img
             src={product.imagen}
             alt={product.nombre}
-            className="w-full h-full object-contain"
+            className={product.fotoCompleta ? "w-full h-full object-cover" : "w-full h-full object-contain"}
           />
         ) : (
           <div className="flex flex-col items-center gap-2 text-white">

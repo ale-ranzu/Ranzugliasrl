@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, MessageCircle } from "lucide-react";
 import { Product } from "../data/catalog";
@@ -12,6 +12,14 @@ export function ProductModal({
   product,
   onClose,
 }: ProductModalProps) {
+  const [activeImage, setActiveImage] = useState<string | undefined>(
+    product?.imagen,
+  );
+
+  useEffect(() => {
+    setActiveImage(product?.imagen);
+  }, [product]);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -62,6 +70,8 @@ export function ProductModal({
     return "bg-yellow-400";
   };
 
+  const hasGallery = !!product.imagenes && product.imagenes.length > 1;
+
   return (
     <AnimatePresence>
       <motion.div
@@ -90,21 +100,60 @@ export function ProductModal({
           <div className="grid md:grid-cols-[1.2fr,1fr]">
             {/* Image */}
             <div
-              className={`${getBrandColor(product.marca)} flex flex-col min-h-[250px]`}
+              className={`${hasGallery || product.fotoCompleta ? "bg-white" : getBrandColor(product.marca)} flex flex-col min-h-[250px]`}
             >
-              <div className="flex-1 flex items-center justify-center p-4">
-                {product.imagen ? (
-                  <img
-                    src={product.imagen}
-                    alt={product.nombre}
-                    className="w-full h-full max-h-80 object-contain"
-                  />
+              <div className={hasGallery ? "h-80 overflow-hidden relative" : product.fotoCompleta ? "flex-1 overflow-hidden" : "flex-1 flex items-center justify-center p-4"}>
+                {activeImage ? (
+                  hasGallery ? (
+                    <>
+                      <img
+                        src={activeImage}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-70"
+                      />
+                      <img
+                        src={activeImage}
+                        alt={product.nombre}
+                        className="relative w-full h-full object-contain"
+                      />
+                    </>
+                  ) : (
+                    <img
+                      src={activeImage}
+                      alt={product.nombre}
+                      className={product.fotoCompleta ? "w-full h-full min-h-[250px] object-cover" : "w-full h-full max-h-80 object-contain"}
+                    />
+                  )
                 ) : (
                   <span className="font-black text-5xl text-white">
                     {product.marca}
                   </span>
                 )}
               </div>
+
+              {/* Thumbnails */}
+              {product.imagenes && product.imagenes.length > 1 && (
+                <div className="flex gap-2 px-6 pb-4">
+                  {product.imagenes.map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImage(img)}
+                      className={`w-16 h-16 rounded-md overflow-hidden border-2 flex-shrink-0 transition-colors cursor-pointer ${
+                        activeImage === img
+                          ? "border-yellow-400"
+                          : "border-transparent hover:border-zinc-300"
+                      }`}
+                    >
+                      <img
+                        src={img}
+                        alt={`${product.nombre} - foto ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Title below image */}
               <div className="px-6 pb-6">

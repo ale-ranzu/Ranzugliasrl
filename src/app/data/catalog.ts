@@ -1,6 +1,10 @@
 import bertiniNeu from '../../imports/bertini/bertini-Modelo-16mil-1.png';
 import gherardiDrill600 from '../../imports/gherardi/gherardi-AIR-DRILL-G-600.png';
-import usadoChasisG600 from '../../imports/usados/Chasis-G600.webp';
+import usadoChasisG600 from '../../imports/usados/Chasis-G600.jpg';
+import usadoRastraPampero from '../../imports/usados/rastra-pampero.jpg';
+import usadoRastraPampero2 from '../../imports/usados/rastra-pampero-2.jpg';
+import usadoRastraPampero3 from '../../imports/usados/rastra-pampero-3.jpg';
+import usadoRastraPampero4 from '../../imports/usados/rastra-pampero-4.jpg';
 import gherardiDrill800 from '../../imports/gherardi/gherardi-AIR-DRILL-G-800.png';
 import gherardiGF from '../../imports/gherardi/gherardi-G100-G100M-G117.png';
 import gherardiPlanter900 from '../../imports/gherardi/gherardi-G-900-mono-disco.png';
@@ -106,9 +110,11 @@ export interface Product {
   tags: string[];
   descripcion: string;
   imagen?: string;
+  imagenes?: string[];
   peso?: string;
   cabina?: string;
   origen?: string;
+  fotoCompleta?: boolean;
 }
 
 export const CATALOG: Product[] = [
@@ -126,6 +132,22 @@ export const CATALOG: Product[] = [
     peso: 'Consultar',
     cabina: '—',
     origen: 'Coronel Pringles, Bs. As.',
+    fotoCompleta: true,
+  },
+  {
+    id: 'usado-rastra-pampero-60',
+    estado: 'usado',
+    categoria: 'rastra',
+    marca: 'Pampero',
+    nombre: 'Rastra Pampero 60 discos',
+    tags: ['60 discos', 'Muy buen estado', 'Se vende sin rolo'],
+    descripcion: 'Rastra Pampero de 60 discos, muy buen estado general. Se vende sin rolo.',
+    imagen: usadoRastraPampero,
+    imagenes: [usadoRastraPampero, usadoRastraPampero2, usadoRastraPampero3, usadoRastraPampero4],
+    peso: 'Consultar',
+    cabina: '—',
+    origen: 'Consultar',
+    fotoCompleta: true,
   },
 
   // ── TRACTORES PAUNY ──────────────────────────────────────────────────
